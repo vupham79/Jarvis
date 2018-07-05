@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
         <script src="js/mobile.js" type="text/javascript"></script>
     </head>
-    <body>
+    <body>        
         <div id="page">
             <div clas="body">
                 <h1>Sign In</h1>

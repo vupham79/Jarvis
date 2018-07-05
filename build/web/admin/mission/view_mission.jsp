@@ -19,25 +19,23 @@
         <script src="js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
+        ${requestScope.haha}
         <div id="page">
             <div id="header">
                 <div>
                     <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
-                            <a href="/Jarvis_Web/admin/admin.jsp">Home</a>
-                        </li>
-                        <li>
-                            <a href="/Jarvis_Web/ViewAvengerController">Avengers</a>
+                            <a href="ViewAvengerController">Avengers</a>
                         </li>
                         <li class="selected">
-                            <a href="/Jarvis_Web/ViewMissionController">Missions</a>
+                            <a href="ViewMissionController">Missions</a>
                         </li>
                         <li>
-                            <a href="/Jarvis_Web/ViewWeaponController">Weapons</a>
+                            <a href="ViewWeaponController">Weapons</a>
                         </li>
                         <li>
-                            <a href="/Jarvis_Web/ViewMarkController">Marks</a>
+                            <a href="ViewMarkController">Marks</a>
                         </li>
                     </ul>
                 </div>

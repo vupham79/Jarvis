@@ -63,65 +63,65 @@
                     <tr>
                         <td><%= count%></td>
                         <td>
-                <c:url var="viewDetailLink" value="ViewMissionWeaponController">
-                    <c:param name="missionId" value="<%= dto.getMissionId()%>"/>
-                    <c:param name="date" value="<%= dto.getMissionDate().toString()%>"/>
-                </c:url>
-                <a href="${viewDetailLink}"><%= dto.getMissionId()%></a>
-                </td>
-                <td><%= dto.getMissionDate()%></td>
-                <td>
-                    <%
-                        String status = dto.getMissionStatus();
-                        if (status.equals("Done")) {
-                    %>
-                    <font color="green">
-                    <%= status%>
-                    </font>
-                    <%
-                    } else {
-                    %>
-                    <font color="red">
-                    <%= status%>
-                    </font>
+                            <c:url var="viewDetailLink" value="ViewMissionWeaponController">
+                                <c:param name="missionId" value="<%= dto.getMissionId()%>"/>
+                                <c:param name="date" value="<%= dto.getMissionDate().toString()%>"/>
+                            </c:url>
+                            <a href="${viewDetailLink}"><%= dto.getMissionId()%></a>
+                        </td>
+                        <td><%= dto.getMissionDate()%></td>
+                        <td>
+                            <%
+                                String status = dto.getMissionStatus();
+                                if (status.equals("Done")) {
+                            %>
+                            <font color="green">
+                            <%= status%>
+                            </font>
+                            <%
+                            } else {
+                            %>
+                            <font color="red">
+                            <%= status%>
+                            </font>
+                            <%
+                                }
+                            %>
+                        </td>
+                        <td>
+                            <%
+                                String taskStatus = dto.getAvengerStatus();
+                                if (taskStatus.equals("Done")) {
+                            %>
+                            <font color="green">
+                            <%= taskStatus%>
+                            </font>
+                            <%
+                            } else {
+                            %>
+                            <font color="red">
+                            <%= taskStatus%>
+                            </font>
+                            <%
+                                }
+                            %>
+                        </td>
+                        <td>
+                            <form action="UpdateMissionController" method="POST">
+                                <input type="submit" name="action" value="Edit"/>
+                                <input type="hidden" name="missionId" value="<%= dto.getMissionId()%>"/>
+                                <input type="hidden" name="date" value="<%= dto.getMissionDate()%>"/>
+                                <input type="hidden" name="missionStatus" value="<%= dto.getMissionStatus()%>"/>
+                            </form>
+                            <form action="DeleteMissionController" method="POST">
+                                <input type="submit" name="action" value="Delete"/>
+                                <input type="hidden" name="missionId" value="<%= dto.getMissionId()%>"/>
+                            </form>
+                        </td>
+                    </tr>
                     <%
                         }
                     %>
-                </td>
-                <td>
-                    <%
-                        String taskStatus = dto.getAvengerStatus();
-                        if (taskStatus.equals("Done")) {
-                    %>
-                    <font color="green">
-                    <%= taskStatus%>
-                    </font>
-                    <%
-                    } else {
-                    %>
-                    <font color="red">
-                    <%= taskStatus%>
-                    </font>
-                    <%
-                        }
-                    %>
-                </td>
-                <td>
-                    <form action="UpdateMissionController" method="POST">
-                        <input type="submit" name="action" value="Edit"/>
-                        <input type="hidden" name="missionId" value="<%= dto.getMissionId()%>"/>
-                        <input type="hidden" name="date" value="<%= dto.getMissionDate()%>"/>
-                        <input type="hidden" name="missionStatus" value="<%= dto.getMissionStatus()%>"/>
-                    </form>
-                    <form action="DeleteMissionController" method="POST">
-                        <input type="submit" name="action" value="Delete"/>
-                        <input type="hidden" name="missionId" value="<%= dto.getMissionId()%>"/>
-                    </form>
-                </td>
-                </tr>
-                <%
-                    }
-                %>
                 </tbody>
             </table>
             <%

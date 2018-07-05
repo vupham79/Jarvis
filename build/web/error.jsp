@@ -12,7 +12,8 @@
         <title>Error</title>
     </head>
     <body>
-        <h1>Error Page</h1>
+        <img src="../images/gif/error.gif" />
+        <br/>
         <font color="red">
         ${requestScope.ERROR}
         </font>
