@@ -55,7 +55,7 @@ public class UpdateAccountController extends HttpServlet {
                         String fullname = request.getParameter("fullname");
                         String role = request.getParameter("role");
                         String status = request.getParameter("status");
-                        dao.updateAvengerAsUser(new AvengerDTO(avengerId, password, fullname, role, status));
+                        dao.updateAvengerAsUser(new AvengerDTO(avengerId, newPassword, fullname, role, status));
                         url = UPDATE;
                     } else {
                         request.setAttribute("ERROR", "Old password not right!");
@@ -63,7 +63,7 @@ public class UpdateAccountController extends HttpServlet {
                 }
             }
         } catch (Exception e) {
-            log("ERROR at UpdateAccountController: " + e.getMessage());
+            log("ERROR at IronmanUpdateAccountController: " + e.getMessage());
             request.setAttribute("ERROR", "Update Account Failed!");
             url = UPDATE;
         } finally {

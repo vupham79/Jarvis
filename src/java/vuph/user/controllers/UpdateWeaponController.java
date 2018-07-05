@@ -6,17 +6,22 @@
 package vuph.user.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import vuph.daos.WeaponDAO;
+import vuph.dtos.WeaponDTO;
 
 /**
  *
  * @author Vu PH
  */
 public class UpdateWeaponController extends HttpServlet {
+
+    private static final String UPDATE = "ViewWeaponController";
+    private static final String EDIT = "weapon/update_weapon.jsp";
+    private static final String ERROR = "error.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,17 +35,24 @@ public class UpdateWeaponController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UpdateWeaponController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UpdateWeaponController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String url = ERROR;
+        try {
+            String action = request.getParameter("action");
+            if (action.equals("Edit")) {
+                url = EDIT;
+            } else if (action.equals("Update")) {
+                url = UPDATE;
+                WeaponDAO dao = new WeaponDAO();
+                String avengerId = request.getSession().getAttribute("USERNAME").toString();
+                String weaponId = request.getParameter("weaponId");
+                String weaponName = request.getParameter("weaponName");
+                dao.updateWeapon(new WeaponDTO(weaponId, weaponName, avengerId));
+            }
+        } catch (Exception e) {
+            log("ERROR at UserUpdateWeaponController: " + e.getMessage());
+            request.setAttribute("ERROR", "Update Weapon Failed!");
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 

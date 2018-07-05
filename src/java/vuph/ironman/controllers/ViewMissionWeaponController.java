@@ -39,7 +39,7 @@ public class ViewMissionWeaponController extends HttpServlet {
             weapons = dao.getMissionMarks(missionId);
             request.setAttribute("WEAPONS", weapons);
         } catch (Exception e) {
-            log("ERROR at ViewMissionWeaponController: " + e.getMessage());
+            log("ERROR at IronmanViewMissionWeaponController: " + e.getMessage());
         } finally {
             request.getRequestDispatcher("mission/view_mission_weapon.jsp").forward(request, response);
         }

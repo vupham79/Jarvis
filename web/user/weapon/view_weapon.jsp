@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Mark ID</th>
+                    <th>Weapon ID</th>
                     <th>Name</th>
                     <th>Action</th>
                 </tr>

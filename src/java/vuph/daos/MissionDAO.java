@@ -212,7 +212,7 @@ public class MissionDAO implements Serializable {
     public boolean removeMissionWeaponDetail(String missionId, String weaponId, String type) throws ClassNotFoundException, SQLException {
         boolean result;
         if (type.equals("Weapon")) {
-            String sql = "DELETE MissionDetail "
+            String sql = "DELETE WeaponDetail "
                     + "WHERE WeaponId=? AND MissionId=?";
             try (Connection conn = MyConnection.getConnection();
                     PreparedStatement preStm = conn.prepareStatement(sql)) {
@@ -237,6 +237,7 @@ public class MissionDAO implements Serializable {
         List<String> result = null;
         String sql = "SELECT Mission.MissionId "
                 + "FROM Mission "
+                + "WHERE MissionStatus = 'In Process'"
                 + "EXCEPT "
                 + "SELECT MissionDetail.MissionId FROM MissionDetail "
                 + "WHERE AvengerId = ?";

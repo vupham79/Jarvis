@@ -6,7 +6,6 @@
 package vuph.user.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +38,7 @@ public class ViewMissionController extends HttpServlet {
             List<MissionDTO> missions = dao.getMissionsOfOne(avengerId);
             request.setAttribute("MISSIONS", missions);
         } catch (Exception e) {
-            log("ERROR at IronmanViewMissionController: " + e.getMessage());
+            log("ERROR at UserViewMissionController: " + e.getMessage());
         } finally {
             request.getRequestDispatcher("mission/view_mission.jsp").forward(request, response);
         }

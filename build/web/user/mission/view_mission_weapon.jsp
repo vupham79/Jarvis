@@ -4,7 +4,6 @@
     Author     : Vu PH
 --%>
 
-<%@page import="vuph.dtos.WeaponDTO"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,15 +13,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            String id = request.getParameter("missionId");
-            String date = request.getParameter("date");
-        %>
         <h1>Marks</h1>
-        <h3>Mission: <%= id%></h3>
+        <h3>Mission: ${param.missionId}</h3>
         <h3>Date: ${param.date}</h3>
         <%
-            List<WeaponDTO> weapons = (List<WeaponDTO>) request.getAttribute("WEAPONS");
+            List<String> weapons = (List<String>) request.getAttribute("WEAPONS");
             if (weapons != null) {
                 if (weapons.size() > 0) {
         %>
@@ -33,7 +28,6 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Avenger</th>
                     <th>Weapon ID</th>
                     <th>Action</th>
                 </tr>
@@ -41,19 +35,17 @@
             <tbody>
                 <%
                     int count = 1;
-                    for (int i = 0; i < weapons.size(); i++) {
+                    for (String weapon : weapons) {
                 %>
                 <tr>
                     <td><%= count++%></td>
-                    <td><%= weapons.get(i).getAvengerId()%></td>
-                    <td><%= weapons.get(i).getWeaponId()%></td>
+                    <td><%= weapon%></td>
                     <td>
                         <form action="DeleteMissionWeaponController" method="POST">
                             <input type="submit" name="action" value="Delete"/>
-                            <input type="hidden" name="avengerName" value="<%= weapons.get(i).getAvengerId()%>"/>
-                            <input type="hidden" name="missionId" value="<%= id%>"/>
-                            <input type="hidden" name="weaponId" value="<%= weapons.get(i).getWeaponId()%>"/>
-                            <input type="hidden" name="date" value="<%= date%>"/>
+                            <input type="hidden" name="missionId" value="${param.missionId}"/>
+                            <input type="hidden" name="weaponId" value="<%= weapon%>"/>
+                            <input type="hidden" name="date" value="${param.date}"/>
                         </form> 
                     </td>
                 </tr>
@@ -70,7 +62,7 @@
         </table>
         <form action="AddMissionWeaponController" method="POST">
             <input type="submit" name="action" value="Add"/>
-            <input type="hidden" name="missionId" value="<%= id%>"/>
+            <input type="hidden" name="missionId" value="${param.missionId}"/>
             <input type="hidden" name="date" value="${param.date}"/>
         </form>
     </body>

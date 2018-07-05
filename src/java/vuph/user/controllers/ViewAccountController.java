@@ -6,11 +6,12 @@
 package vuph.user.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import vuph.daos.AvengerDAO;
+import vuph.dtos.AvengerDTO;
 
 /**
  *
@@ -30,17 +31,15 @@ public class ViewAccountController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ViewAccountController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ViewAccountController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            AvengerDAO dao = new AvengerDAO();
+            String avengerId = request.getSession().getAttribute("USERNAME").toString();
+            AvengerDTO avenger = dao.getAvenger(avengerId);
+            request.setAttribute("AVENGER", avenger);
+        } catch (Exception e) {
+            log("ERROR at ViewAccountController: " + e.getMessage());
+        } finally {
+            request.getRequestDispatcher("account/view_account.jsp").forward(request, response);
         }
     }
 

@@ -21,16 +21,16 @@
                     <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
-                            <a href="/Jarvis_Web/ironman/index.jsp">Home</a>
+                            <a href="index.jsp">Home</a>
                         </li>
                         <li>
-                            <a href="/Jarvis_Web/ironman/ViewAccountController">Account</a>
+                            <a href="ViewAccountController">Account</a>
                         </li>
                         <li class="selected">                            
-                            <a href="/Jarvis_Web/ironman/ViewMissionController">Missions</a>
+                            <a href="ViewMissionController">Missions</a>
                         </li>
                         <li>
-                            <a href="/Jarvis_Web/ironman/ViewMarkController">Marks</a>
+                            <a href="ViewWeaponController">Weapon</a>
                         </li>
                     </ul>
                 </div>

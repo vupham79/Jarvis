@@ -6,17 +6,20 @@
 package vuph.user.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import vuph.daos.WeaponDAO;
 
 /**
  *
  * @author Vu PH
  */
 public class DeleteWeaponController extends HttpServlet {
+
+    private static final String SUCCESS = "ViewWeaponController";
+    private static final String ERROR = "error.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,17 +33,18 @@ public class DeleteWeaponController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet DeleteWeaponController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet DeleteWeaponController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String url = ERROR;
+        try {
+            WeaponDAO dao = new WeaponDAO();
+            String weaponId = request.getParameter("weaponId");
+            dao.removeWeapon(weaponId);
+            url = SUCCESS;
+        } catch (Exception e) {
+            log("ERROR at UserDeleteWeaponController: " + e.getMessage());
+            request.setAttribute("ERROR", "Delete weapon failed!");
+            url = SUCCESS;
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 
