@@ -12,7 +12,7 @@
         <title>Error</title>
     </head>
     <body>
-        <img src="../images/gif/error.gif" />
+        <img src="../images/gif/error.gif" alt=""/>
         <br/>
         <font color="red">
         ${requestScope.ERROR}

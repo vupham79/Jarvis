@@ -222,7 +222,7 @@
 		display: block;
 		float: left;
 		height: 60px;
-		margin: 0 0 0;
+		margin: 5% 0 0;
 		padding: 0;
 		width: 79%;
 	}
@@ -234,7 +234,7 @@
 		padding: 0 0 0 0;
 		position: absolute;
 		right: 3%;
-		top: 20px;
+		top: 14px;
 		width: 50px;
 		z-index: 999;
 	}

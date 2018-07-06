@@ -17,40 +17,46 @@
     </head>
     <body>        
         <div id="page">
-            <div clas="body">
-                <h1>Sign In</h1>
-                <h2>Fulfill as constructor</h2>
-                <form action="MainController" method="POST">
-                    <table border="0">
-                        <tbody>
-                            <tr>
-                                <td><input type="text" name="txtUsername" placeholder="Username"/></td>
-                                <td><font color='red'>${requestScope.INVALID.getUsernameError()}</font></td>
-                            </tr>
-                            <tr>
-                                <td><input type="password" name="txtPassword" placeholder="Password"/></td>
-                                <td><font color='red'>${requestScope.INVALID.getPasswordError()}</font></td>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" name="action" value="Login"</td>
-                                <td></td>
-                            </tr>
-                        <font color="red">
-                        ${requestScope.ERROR}
-                        </font>
-                        </tbody>
-                    </table>
-                </form>
+            <div id="body">
+                <div class="header">
+                    <div class="contact">
+                        <div class="login">
+                            <h1>Sign In</h1>
+                            <h2>Fulfill as constructor</h2>
+                            <form action="MainController" method="POST">
+                                <table border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" name="txtUsername" placeholder="Username"/></td>
+                                            <td><font color='red'>${requestScope.INVALID.getUsernameError()}</font></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="password" name="txtPassword" placeholder="Password"/></td>
+                                            <td><font color='red'>${requestScope.INVALID.getPasswordError()}</font></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="submit" name="action" value="Login"</td>
+                                            <td></td>
+                                        </tr>
+                                    <font color="red">
+                                    ${requestScope.ERROR}
+                                    </font>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="footer">
                 <div class="connect">
                     <div>
                         <h1>FOLLOW OUR  MISSIONS ON</h1>
                         <div>
-                            <a href="http://freewebsitetemplates.com/go/facebook/" class="facebook">facebook</a>
-                            <a href="http://freewebsitetemplates.com/go/twitter/" class="twitter">twitter</a>
-                            <a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus">googleplus</a>
-                            <a href="http://pinterest.com/fwtemplates/" class="pinterest">pinterest</a>
+                            <a href="" class="facebook">facebook</a>
+                            <a href="" class="twitter">twitter</a>
+                            <a href="" class="googleplus">googleplus</a>
+                            <a href="" class="pinterest">pinterest</a>
                         </div>
                     </div>
                 </div>
