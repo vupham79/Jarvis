@@ -75,11 +75,14 @@ public class MarksDAO implements Serializable {
 
     public boolean removeMark(String markId) throws ClassNotFoundException, SQLException {
         boolean result;
-        String sql = "DELETE Marks "
-                + "WHERE MarkId=?";
+        String sql = "DELETE FROM MarkDetail "
+                + "WHERE MarkDetail.MarkId = ? "
+                + "DELETE FROM Marks "
+                + "WHERE Marks.MarkId = ?";
         try (Connection conn = MyConnection.getConnection();
                 PreparedStatement preStm = conn.prepareStatement(sql)) {
             preStm.setString(1, markId);
+            preStm.setString(2, markId);
             result = preStm.executeUpdate() > 0;
         }
         return result;

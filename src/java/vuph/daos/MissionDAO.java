@@ -57,11 +57,14 @@ public class MissionDAO implements Serializable {
 
     public boolean removeMission(String missionId) throws ClassNotFoundException, SQLException {
         boolean result;
-        String sql = "DELETE Mission "
+        String sql = "DELETE FROM MissionDetail "
+                + "WHERE MissionDetail.MissionId = ? "
+                + "DELETE Mission "
                 + "WHERE MissionId=?";
         try (Connection conn = MyConnection.getConnection();
                 PreparedStatement preStm = conn.prepareStatement(sql)) {
             preStm.setString(1, missionId);
+            preStm.setString(2, missionId);
             result = preStm.executeUpdate() > 0;
         }
         return result;

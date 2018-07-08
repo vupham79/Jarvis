@@ -4,6 +4,7 @@
     Author     : Vu PH
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
@@ -11,15 +12,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -40,26 +41,65 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <form action="AddMissionWeaponController" method="POST">
+                <h2 style="text-align: center">
+                    ADD WEAPON TO MISSION
+                    <br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
+                <form action="MainController" method="POST">
+                    <input type="hidden" name="controller" value="AddMissionWeaponController"/>
                     <input type="hidden" name="avengerId" value="<%= request.getParameter("avengerId")%>"/>
                     <input type="hidden" name="avengerName" value="<%= request.getParameter("avengerName")%>"/>
                     <input type="hidden" name="missionId" value="<%= request.getParameter("missionId")%>"/>
                     <input type="hidden" name="date" value="<%= request.getParameter("date")%>"/>
-                    <table border="0">
+                    <table border="1">
                         <tbody>
                             <tr>
                                 <td>Weapon ID: </td>
-                                <td><input type="text" name="weaponId" required/></td>
+                                <c:if test="${requestScope.WEAPONS.size() > 0}" var="weaponSize">
+                                    <td>
+                                        <select name="weaponId">
+                                            <c:forEach items="${requestScope.WEAPONS}" var="weapon">
+                                                <option value="${weapon}">${weapon}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </td>
+                                </c:if>
+                                <c:if test="${!weaponSize}">
+                                    <td>
+                                        No weapons left
+                                    </td>
+                                </c:if>
                             </tr>
                             <tr>
-                                <td>Type: </td>
+                                <td>Mark ID: </td>
+                                <c:if test="${requestScope.MARKS.size() > 0}" var="markSize">
+                                    <td>
+                                        <select name="markId">
+                                            <c:forEach items="${requestScope.MARKS}" var="mark">
+                                                <option value="${mark}">${mark}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </td>
+                                </c:if>
+                                <c:if test="${!markSize}">
+                                    <td>
+                                        No marks left
+                                    </td>
+                                </c:if>
+                            </tr>
+                            <tr>
+                                <td>Which to add: </td>
                                 <td>
                                     Weapon <input type="radio" name="type" value="Weapon" checked required/>
                                     Mark <input type="radio" name="type" value="Mark" required/>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="submit" name="action" value="Submit"/></td>
+                                <td></td>
+                                <td><input class="button" type="submit" name="action" value="Submit"/></td>
                             </tr>
                         </tbody>
                     </table>

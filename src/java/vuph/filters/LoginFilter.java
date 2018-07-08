@@ -111,11 +111,11 @@ public class LoginFilter implements Filter {
                         if (userRole.toString().equals("admin")) {
                             chain.doFilter(request, response);
                         } else {
-                            req.setAttribute("ERROR", "You are not allowed to enter this page!");
+                            req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
                             req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
-                        req.setAttribute("ERROR", "You are not allowed to enter this page!");
+                        req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
                         req.getRequestDispatcher("../error.jsp").forward(req, res);
                     }
                     break;
@@ -126,11 +126,11 @@ public class LoginFilter implements Filter {
                         if (userRole.toString().equals("ironman")) {
                             chain.doFilter(request, response);
                         } else {
-                            req.setAttribute("ERROR", "You are not allowed to enter this page!");
+                            req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
                             req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
-                        req.setAttribute("ERROR", "You are not allowed to enter this page!");
+                        req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
                         req.getRequestDispatcher("../error.jsp").forward(req, res);
                     }
                     break;
@@ -141,11 +141,11 @@ public class LoginFilter implements Filter {
                         if (userRole.toString().equals("user")) {
                             chain.doFilter(request, response);
                         } else {
-                            req.setAttribute("ERROR", "You are not allowed to enter this page!");
+                            req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
                             req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
-                        req.setAttribute("ERROR", "You are not allowed to enter this page!");
+                        req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
                         req.getRequestDispatcher("../error.jsp").forward(req, res);
                     }
                     break;

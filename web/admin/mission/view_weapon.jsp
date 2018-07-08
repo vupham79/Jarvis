@@ -12,15 +12,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -47,9 +47,18 @@
                     String avengerName = request.getParameter("avengerName");
                     String avengerId = request.getParameter("avengerId");
                 %>
-                <h1><%= avengerName%></h1>
-                <h3>Mission: <%= id%></h3>
-                <h3>Date: <%= date%></h3>
+                <h2 style="text-align: center">
+                    WEAPON(S) IN USED<br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
+                </h2>
+                <h3 style="text-align: center; font-family: sans-serif; color: #ffffff">
+                    Avenger: <%= avengerName%><br/>
+                    Mission: <%= id%><br/>
+                    Date: <%= date%><br/>
+                </h3>
                 <%
                     List<String> weapons = (List<String>) request.getAttribute("WEAPONS");
                     if (weapons != null) {
@@ -72,7 +81,8 @@
                             <td><%= count++%></td>
                             <td><%= weapons.get(i)%></td>
                             <td>
-                                <form action="DeleteMissionWeaponController" method="POST">
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="DeleteMissionWeaponController"/>
                                     <input type="submit" name="action" value="Delete"/>
                                     <input type="hidden" name="avengerName" value="<%= avengerName%>"/>
                                     <input type="hidden" name="missionId" value="<%= id%>"/>
@@ -83,22 +93,43 @@
                         </tr>
                         <%
                             }
+                        %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="AddMissionWeaponController"/>
+                                    <input class="button" type="submit" name="action" value="Add"/>
+                                    <input type="hidden" name="missionId" value="<%= id%>"/>
+                                    <input type="hidden" name="date" value="<%= date%>"/>
+                                    <input type="hidden" name="avengerName" value="<%= avengerName%>"/>
+                                    <input type="hidden" name="avengerId" value="<%= avengerId%>"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <%
                         } else {
                         %>
-                        No weapons !
-                        <%
-                                }
+                    <h2 style="text-align: center">
+                        <font color="red" style="font-family: monospace">
+                        NO WEAPONS!
+                        </font>
+                        <form action="MainController" method="POST">
+                            <input type="hidden" name="controller" value="AddMissionWeaponController"/>
+                            <input class="button" type="submit" name="action" value="Add"/>
+                            <input type="hidden" name="missionId" value="<%= id%>"/>
+                            <input type="hidden" name="date" value="<%= date%>"/>
+                            <input type="hidden" name="avengerName" value="<%= avengerName%>"/>
+                            <input type="hidden" name="avengerId" value="<%= avengerId%>"/>
+                        </form>
+                    </h2>
+                    <%
                             }
-                        %>
+                        }
+                    %>
                     </tbody>
                 </table>
-                <form action="AddMissionWeaponController" method="POST">
-                    <input type="submit" name="action" value="Add"/>
-                    <input type="hidden" name="missionId" value="<%= id%>"/>
-                    <input type="hidden" name="date" value="<%= date%>"/>
-                    <input type="hidden" name="avengerName" value="<%= avengerName%>"/>
-                    <input type="hidden" name="avengerId" value="<%= avengerId%>"/>
-                </form>
             </div>
             <div id="footer">
                 <div class="connect">

@@ -14,15 +14,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -43,15 +43,16 @@
                 </div>
             </div>
             <div id="body" class="home">
+                <h2 style="text-align: center">
+                    MISSION DETAIL<BR/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
                 <%
                     String id = request.getParameter("missionId");
                     String date = request.getParameter("date");
                 %>
-                <font color="red">
-                ${requestScope.ERROR}
-                </font>
-                <h1>Mission: <%= id%></h1>
-                <h3>Date: <%= date%></h3>
                 <%
                     List<MissionDTO> list = (List<MissionDTO>) request.getAttribute("DETAILS");
                     if (list != null) {
@@ -94,14 +95,16 @@
                                     </c:if>
                                 </td>
                                 <td>
-                                    <form action="UpdateMissionDetailController" method="POST">
+                                    <form action="MainController" method="POST">
+                                        <input type="hidden" name="controller" value="UpdateMissionDetailController"/>
                                         <input type="submit" name="action" value="Edit"/>
                                         <input type="hidden" name="missionId" value="<%= id%>"/>
                                         <input type="hidden" name="avengerName" value="${detail.getAvengerName()}"/>
                                         <input type="hidden" name="avengerId" value="${detail.getAvengerId()}"/>
                                         <input type="hidden" name="date" value="<%= date%>"/>
                                     </form>
-                                    <form action="DeleteMissionDetailController" method="POST">
+                                    <form action="MainController" method="POST">
+                                        <input type="hidden" name="controller" value="DeleteMissionDetailController"/>
                                         <input type="submit" name="action" value="Delete"/>
                                         <input type="hidden" name="missionId" value="<%= id%>"/>
                                         <input type="hidden" name="avengerId" value="${detail.getAvengerId()}"/>
@@ -111,21 +114,40 @@
                                 </td>
                             </tr>
                         </c:forEach>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="AddMissionDetailController"/>
+                                    <input class="button" type="submit" name="action" value="Add"/>
+                                    <input type="hidden" name="missionId" value="<%= id%>"/>
+                                    <input type="hidden" name="date" value="<%= date%>"/>
+                                </form>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <%
                 } else {
                 %>
-                No details!
+                <h2 style="text-align: center">
+                    <font color="red" style="font-family: monospace">
+                    NO DETAILS!
+                    </font>
+                    <form action="MainController" method="POST">
+                        <input type="hidden" name="controller" value="AddMissionDetailController"/>
+                        <input class="button" type="submit" name="action" value="Add"/>
+                        <input type="hidden" name="missionId" value="<%= id%>"/>
+                        <input type="hidden" name="date" value="<%= date%>"/>
+                    </form>
+                </h2>
                 <%
                         }
                     }
                 %>
-                <form action="AddMissionDetailController" method="POST">
-                    <input type="submit" name="action" value="Add"/>
-                    <input type="hidden" name="missionId" value="<%= id%>"/>
-                    <input type="hidden" name="date" value="<%= date%>"/>
-                </form>
             </div>
             <div id="footer">
                 <div class="connect">

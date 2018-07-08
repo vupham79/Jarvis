@@ -4,6 +4,8 @@
     Author     : Vu PH
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
@@ -11,15 +13,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -40,25 +42,37 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <form action="AddWeaponController" method="POST">
-                    <font color="red">
+                <h2 style="text-align: center">
+                    ADD WEAPON
+                    <br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
                     ${requestScope.ERROR}
                     </font>
-                    <table border="0">
+                </h2>
+                <form action="MainController" method="POST">
+                    <input type="hidden" name="controller" value="AddWeaponController"/>
+                    <table border="1">
                         <tr>
                             <td>Weapon ID: </td>
-                            <td><input type="text" name="txtId" value="${requestScope.txtID}" required/></td>
+                            <td><input type="text" name="txtId" value="${param.txtID}" required/></td>
                         </tr>
                         <tr>
                             <td>Name: </td>
-                            <td><input type="text" name="txtName" value="<%= request.getParameter("txtName")%>" required/></td>
+                            <td><input type="text" name="txtName" value="${param.txtName}" required/></td>
                         </tr>
                         <tr>
                             <td>Owner: </td>
-                            <td><input type="text" name="txtAvengerId" value="<%= request.getParameter("txtAvengerId")%>" required/></td>
+                            <td>
+                                <select name="txtAvengerId">
+                                    <c:forEach items="${requestScope.AVENGERS}" var="avenger">
+                                        <option value="${avenger}">${avenger}</option>
+                                    </c:forEach>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="action" value="Submit"/></td>
+                            <td></td>
+                            <td><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                     </table>
                 </form>

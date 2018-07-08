@@ -11,15 +11,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -40,7 +40,15 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <form action="UpdateMissionDetailController" method="POST">
+                <h2 style="text-align: center">
+                    UPDATE MISSION DETAIL
+                    <br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
+                <form action="MainController" method="POST">
+                    <input type="hidden" name="controller" value="UpdateMissionDetailController"/>
                     <table border="1">
                         <tbody>
                             <tr>
@@ -64,10 +72,15 @@
                                     In Process <input type="radio" name="status" value="In Process" required/>
                                 </td>
                             </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="hidden" name="date" value="<%= request.getParameter("date")%>"/>
+                                    <input type="submit" class="button" name="action" value="Submit"/>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <input type="hidden" name="date" value="<%= request.getParameter("date")%>"/>
-                    <input type="submit" name="action" value="Submit"/>
                 </form>
             </div>
             <div id="footer">

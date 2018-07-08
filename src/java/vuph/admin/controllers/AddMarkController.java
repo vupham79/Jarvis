@@ -48,8 +48,8 @@ public class AddMarkController extends HttpServlet {
             }
         } catch (Exception e) {
             log("ERROR at AddMarkController: " + e.getMessage());
-            request.setAttribute("ERROR", "Add Mark Failed!");
-            url = SUBMIT;
+            request.setAttribute("ERROR", "MARK ID EXISTED!");
+            url = ADD;
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

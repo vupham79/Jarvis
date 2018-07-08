@@ -12,10 +12,12 @@
         <title>Error</title>
     </head>
     <body>
-        <img src="../images/gif/error.gif" alt=""/>
-        <br/>
-        <font color="red">
-        ${requestScope.ERROR}
-        </font>
+        <h1 style="text-align: center">
+            <img src="../images/gif/error.gif" alt=""/>
+            <br/>
+            <font color="red">
+            ${requestScope.ERROR}
+            </font>
+        </h1>
     </body>
 </html>

@@ -7,11 +7,14 @@ package vuph.admin.controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import vuph.daos.MarksDAO;
 import vuph.daos.MissionDAO;
+import vuph.daos.WeaponDAO;
 
 /**
  *
@@ -38,13 +41,26 @@ public class AddMissionWeaponController extends HttpServlet {
         try {
             String action = request.getParameter("action");
             if (action.equals("Add")) {
+                WeaponDAO weaponDAO = new WeaponDAO();
+                MarksDAO markDAO = new MarksDAO();
+                String avengerId = request.getParameter("avengerId");
+                String missionId = request.getParameter("missionId");
+                List<String> weapons = weaponDAO.getWeaponNotUsed(avengerId, missionId);
+                List<String> marks = markDAO.getMarksNotUsedOfMission(missionId);
+                request.setAttribute("MARKS", marks);
+                request.setAttribute("WEAPONS", weapons);
                 url = ADD;
             } else {
                 MissionDAO dao = new MissionDAO();
-                String weaponId = request.getParameter("weaponId");
                 String avengerId = request.getParameter("avengerId");
                 String missionId = request.getParameter("missionId");
                 String type = request.getParameter("type");
+                String weaponId;
+                if (type.equals("Weapon")) {
+                    weaponId = request.getParameter("weaponId");
+                } else {
+                    weaponId = request.getParameter("markId");
+                }
                 dao.addMissionWeaponOfOne(weaponId, avengerId, missionId, type);
                 url = SUBMIT;
             }

@@ -21,9 +21,6 @@
                 <div>
                     <a class="logo"><img src="images/logoo.png" alt=""></a>
                     <ul id="navigation">
-                        <li class="selected">
-                            <a href="/Jarvis_Web/user/index.jsp">Home</a>
-                        </li>
                         <li>
                             <a href="/Jarvis_Web/user/ViewAccountController">Account</a>
                         </li>
@@ -37,6 +34,9 @@
                 </div>
             </div>
             <div id="body" class="home">
+                <h1 style="text-align: center; font-family: monospace;font-size: 30px; color: #a3a3a3">
+                    Welcome back, ${sessionScope.USERNAME}.
+                </h1>
             </div>
             <div id="footer">
                 <div class="connect">

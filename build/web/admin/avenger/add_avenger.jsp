@@ -11,15 +11,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -40,11 +40,15 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <form action="AddAvengerController" method="POST">
-                    <font color="red">
+                <h2 style="text-align: center">
+                    ADD AVENGER
+                    <br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
                     ${requestScope.ERROR}
                     </font>
-                    <table border="0">
+                </h2>
+                <form action="MainController" method="POST">
+                    <table border="1">
                         <tr>
                             <td>Avenger ID: </td>
                             <td><input type="text" name="txtId" value="${param.txtId}" required/></td>
@@ -79,7 +83,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="action" value="Submit"/></td>
+                            <td></td>
+                        <input type="hidden" name="controller" value="AddAvengerController"/>
+                        <td><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                     </table>
                 </form>

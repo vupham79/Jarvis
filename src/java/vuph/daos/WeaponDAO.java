@@ -95,11 +95,14 @@ public class WeaponDAO implements Serializable {
 
     public boolean removeWeapon(String weaponId) throws ClassNotFoundException, SQLException {
         boolean result;
-        String sql = "DELETE Weapon "
-                + "WHERE WeaponId=?";
+        String sql = "DELETE FROM WeaponDetail "
+                + "WHERE WeaponDetail.WeaponId = ? "
+                + "DELETE FROM Weapon "
+                + "WHERE Weapon.WeaponId = ?";
         try (Connection conn = MyConnection.getConnection();
                 PreparedStatement preStm = conn.prepareStatement(sql)) {
             preStm.setString(1, weaponId);
+            preStm.setString(2, weaponId);
             result = preStm.executeUpdate() > 0;
         }
         return result;

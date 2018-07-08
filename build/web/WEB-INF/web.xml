@@ -228,6 +228,22 @@
         <servlet-name>UserViewMissionWeaponController</servlet-name>
         <servlet-class>vuph.user.controllers.ViewMissionWeaponController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminMainController</servlet-name>
+        <servlet-class>vuph.admin.controllers.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IronmanMainController</servlet-name>
+        <servlet-class>vuph.ironman.controllers.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserMainController</servlet-name>
+        <servlet-class>vuph.user.controllers.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminLogoutAccountController</servlet-name>
+        <servlet-class>vuph.admin.controllers.LogoutAccountController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ViewAccountController</servlet-name>
         <url-pattern>/admin/ViewAccountController</url-pattern>
@@ -447,6 +463,22 @@
     <servlet-mapping>
         <servlet-name>UserViewMissionWeaponController</servlet-name>
         <url-pattern>/user/ViewMissionWeaponController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminMainController</servlet-name>
+        <url-pattern>/admin/MainController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IronmanMainController</servlet-name>
+        <url-pattern>/ironman/MainController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserMainController</servlet-name>
+        <url-pattern>/user/MainController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutAccountController</servlet-name>
+        <url-pattern>/admin/LogoutAccountController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

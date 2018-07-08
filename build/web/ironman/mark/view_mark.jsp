@@ -13,19 +13,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IRONMAN</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
-                        <li>
-                            <a href="index.jsp">Home</a>
-                        </li>
                         <li>
                             <a href="ViewAccountController">Account</a>
                         </li>
@@ -39,74 +36,98 @@
                 </div>
             </div>
             <div id="body" class="home">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Mark ID</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <%
-                List<MarksDTO> list = (List<MarksDTO>) request.getAttribute("MARKS");
-                if (list.size() > 0) {
-            %>
-            <tbody>
-                <%
-                    int count = 0;
-                    for (MarksDTO dto : list) {
-                        count++;
-                %>
-                <tr>
-                    <td><%= count%></td>
-                    <td><%= dto.getMarkId()%></td>
-                    <td>
+                <h2 style="text-align: center">
+                    MARK<br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Mark ID</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <%
+                        List<MarksDTO> list = (List<MarksDTO>) request.getAttribute("MARKS");
+                        if (list.size() > 0) {
+                    %>
+                    <tbody>
                         <%
-                            String status = dto.getMarkStatus();
-                            if (status.equals("Active")) {
+                            int count = 0;
+                            for (MarksDTO dto : list) {
+                                count++;
                         %>
-                        <font color="green">
-                        <%= status%>
-                        </font>
-                        <%
-                        } else {
-                        %>
-                        <font color="red">
-                        <%= status%>
-                        </font>
+                        <tr>
+                            <td><%= count%></td>
+                            <td><%= dto.getMarkId()%></td>
+                            <td>
+                                <%
+                                    String status = dto.getMarkStatus();
+                                    if (status.equals("Active")) {
+                                %>
+                                <font color="green">
+                                <%= status%>
+                                </font>
+                                <%
+                                } else {
+                                %>
+                                <font color="red">
+                                <%= status%>
+                                </font>
+                                <%
+                                    }
+                                %>
+                            </td>
+                            <td>
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="UpdateMarkController"/>
+                                    <input type="submit" name="action" value="Edit"/>
+                                    <input type="hidden" name="txtId" value="<%= dto.getMarkId()%>"/>
+                                    <input type="hidden" name="txtStatus" value="<%= dto.getMarkStatus()%>"/>
+                                </form>
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="DeleteMarkController"/>
+                                    <input type="submit" name="action" value="Delete"/>
+                                    <input type="hidden" name="txtId" value="<%= dto.getMarkId()%>"/>
+                                </form>
+                            </td>
+                        </tr>
                         <%
                             }
                         %>
-                    </td>
-                    <td>
-                        <form action="UpdateMarkController" method="POST">
-                            <input type="submit" name="action" value="Edit"/>
-                            <input type="hidden" name="txtId" value="<%= dto.getMarkId()%>"/>
-                            <input type="hidden" name="txtStatus" value="<%= dto.getMarkStatus()%>"/>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="AddMarkController"/>
+                                    <input class="button" type="submit" name="action" value="Add"/>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <%
+                    } else {
+                    %>
+                    <h2 style="text-align: center">
+                        <font color="red" style="font-size: 15px;font-family: monospace">
+                        NO MARKS LEFT!
+                        </font>
+                        <form action="MainController" method="POST">
+                            <input type="hidden" name="controller" value="AddMarkController"/>
+                            <input class="button" type="submit" name="action" value="Add"/>
                         </form>
-                        <form action="DeleteMarkController" method="POST">
-                            <input type="submit" name="action" value="Delete"/>
-                            <input type="hidden" name="txtId" value="<%= dto.getMarkId()%>"/>
-                        </form>
-                    </td>
-                </tr>
-                <%
-                    }
-                %>
-            </tbody>
-            <%
-            } else {
-            %>
-            No mark left!
-            <%
-                }
-            %>
-        </table>
-        <form action="AddMarkController" method="POST">
-            <input type="submit" name="action" value="Add"/>
-        </form>
-    </div>
+                    </h2>
+                    <%
+                        }
+                    %>
+                </table>
+            </div>
             <div id="footer">
                 <div class="connect">
                     <div>

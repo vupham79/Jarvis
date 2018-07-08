@@ -14,37 +14,35 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
         <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>        
         <div id="page">
             <div id="body">
                 <div class="header">
                     <div class="contact">
-                        <div class="login">
-                            <h1>Sign In</h1>
-                            <h2>Fulfill as constructor</h2>
-                            <form action="MainController" method="POST">
-                                <table border="0">
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="text" name="txtUsername" placeholder="Username"/></td>
-                                            <td><font color='red'>${requestScope.INVALID.getUsernameError()}</font></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="password" name="txtPassword" placeholder="Password"/></td>
-                                            <td><font color='red'>${requestScope.INVALID.getPasswordError()}</font></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="submit" name="action" value="Login"</td>
-                                            <td></td>
-                                        </tr>
-                                    <font color="red">
-                                    ${requestScope.ERROR}
-                                    </font>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
+                        <h1>LOG In</h1>
+                        <h2>Welcome to avengers world</h2>
+                        <form action="MainController" method="POST">
+                            <h3 style="text-align: center">
+                                <font color="red" style="font-family: monospace">
+                                ${requestScope.ERROR}
+                                ${requestScope.INVALID.getUsernameError()}
+                                ${requestScope.INVALID.getPasswordError()}
+                                </font>
+                            </h3>
+                            <tr>
+                                <td><input type="text" name="txtUsername" placeholder="Username"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" name="txtPassword" placeholder="Password"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" name="action" value="Login"</td>
+                            </tr>
+                        </form>
                     </div>
                 </div>
             </div>

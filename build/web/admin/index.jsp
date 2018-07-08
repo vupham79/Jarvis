@@ -11,6 +11,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
         <script src="js/mobile.js" type="text/javascript"></script>
@@ -40,6 +43,9 @@
                 </div>
             </div>
             <div id="body" class="home">
+                <h1 style="text-align: center; font-family: monospace;font-size: 30px; color: #a3a3a3">
+                    Welcome back, ${sessionScope.USERNAME}.
+                </h1>
             </div>
             <div id="footer">
                 <div class="connect">

@@ -14,15 +14,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
                             <a href="ViewAccountController">Account</a>
@@ -43,9 +43,12 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <font color="red">
-                ${requestScope.ERROR}
-                </font>
+                <h2 style="text-align: center">
+                    MISSIONS<br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
                 <table border="1">
                     <thead>
                         <tr>
@@ -95,13 +98,15 @@
                                 %>
                             </td>
                             <td>
-                                <form action="UpdateMissionController" method="POST">
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="UpdateMissionController"/>
                                     <input type="submit" name="action" value="Edit"/>
                                     <input type="hidden" name="txtId" value="<%= dto.getMissionId()%>"/>
                                     <input type="hidden" name="txtDate" value="<%= dto.getMissionDate()%>"/>
                                     <input type="hidden" name="txtStatus" value="<%= dto.getMissionStatus()%>"/>
                                 </form>
-                                <form action="DeleteMissionController" method="POST">
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="DeleteMissionController"/>
                                     <input type="submit" name="action" value="Delete"/>
                                     <input type="hidden" name="txtId" value="<%= dto.getMissionId()%>"/>
                                 </form>
@@ -110,6 +115,18 @@
                         <%
                             }
                         %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <form action="MainController" method="POST">
+                                    <input type="hidden" name="controller" value="AddMissionController"/>
+                                    <input type="submit" class="button" name="action" value="Add"/>
+                                </form>
+                            </td>
+                        </tr>
                     </tbody>
                     <%
                     } else {
@@ -119,9 +136,6 @@
                         }
                     %>
                 </table>
-                <form action="AddMissionController" method="POST">
-                    <input type="submit" name="action" value="Add"/>
-                </form>
             </div>
             <div id="footer">
                 <div class="connect">

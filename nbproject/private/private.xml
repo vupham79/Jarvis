@@ -3,8 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/user/index.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/account/update_account.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/admin/controllers/ViewMissionWeaponController.java</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/login.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/controllers/LoginController.java</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/admin/controllers/MainController.java</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/account/view_account.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/admin/controllers/AddWeaponController.java</file>
             <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/index.jsp</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/error.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/admin/controllers/LogoutAccountController.java</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/admin/controllers/AddMissionWeaponController.java</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/ironman/index.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/mission/view_weapon.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/mission/view_mission.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/mission/view_mission_details.jsp</file>
         </group>
     </open-files>
 </project-private>

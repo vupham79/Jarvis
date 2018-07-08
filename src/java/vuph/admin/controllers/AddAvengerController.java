@@ -57,8 +57,8 @@ public class AddAvengerController extends HttpServlet {
             }
         } catch (Exception e) {
             log("ERROR at AddMissionController: " + e.getMessage());
-            request.setAttribute("ERROR", "Add Avenger Failed!");
-            url = SUBMIT;
+            request.setAttribute("ERROR", "AVENGER EXISTED!");
+            url = ADD;
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

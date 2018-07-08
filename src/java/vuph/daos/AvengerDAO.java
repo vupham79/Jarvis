@@ -123,11 +123,14 @@ public class AvengerDAO implements Serializable {
 
     public boolean removeAvenger(String avengerId) throws ClassNotFoundException, SQLException {
         boolean result;
-        String sql = "DELETE Members "
-                + "WHERE AvengerId=?";
+        String sql = "DELETE FROM MissionDetail "
+                + "WHERE MissionDetail.AvengerId = ? "
+                + "DELETE FROM Members "
+                + "WHERE Members.AvengerId = ?";
         try (Connection conn = MyConnection.getConnection();
                 PreparedStatement preStm = conn.prepareStatement(sql)) {
             preStm.setString(1, avengerId);
+            preStm.setString(2, avengerId);
             result = preStm.executeUpdate() > 0;
         }
         return result;

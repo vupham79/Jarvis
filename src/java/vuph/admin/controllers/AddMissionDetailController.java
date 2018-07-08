@@ -6,10 +6,12 @@
 package vuph.admin.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import vuph.daos.AvengerDAO;
 import vuph.daos.MissionDAO;
 
 /**
@@ -37,6 +39,9 @@ public class AddMissionDetailController extends HttpServlet {
         try {
             String action = request.getParameter("action");
             if (action.equals("Add")) {
+                AvengerDAO dao = new AvengerDAO();
+                List<String> avengers = dao.getAvengers();
+                request.setAttribute("AVENGERS", avengers);
                 url = ADD;
             } else if (action.equals("Submit")) {
                 MissionDAO dao = new MissionDAO();
@@ -48,7 +53,7 @@ public class AddMissionDetailController extends HttpServlet {
             }
         } catch (Exception e) {
             log("ERROR at AddMissionDetailController: " + e.getMessage());
-            request.setAttribute("ERROR", "Add detail failed!");
+            request.setAttribute("ERROR", "AVENGER ADDED ALREADY!");
             url = SUBMIT;
         } finally {
             request.getRequestDispatcher(url).forward(request, response);

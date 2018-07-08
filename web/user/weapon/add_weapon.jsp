@@ -11,19 +11,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MEMBER</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
-                        <li>
-                            <a href="index.jsp">Home</a>
-                        </li>
                         <li>
                             <a href="ViewAccountController">Account</a>
                         </li>
@@ -37,11 +34,15 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <font color="red">
-                ${requestScope.ERROR}
-                </font>
-                <form action="AddWeaponController" method="POST">
-                    <table border="0">
+                <h2 style="text-align: center">
+                    ADD WEAPON<br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
+                <form action="MainController" method="POST">
+                    <input type="hidden" name="controller" value="AddWeaponController"/>
+                    <table border="1">
                         <tr>
                             <td>Weapon ID: </td>
                             <td><input type="text" name="weaponId" value="${param.weaponId}" required/></td>
@@ -51,7 +52,8 @@
                             <td><input type="text" name="weaponName" value="${param.weaponName}" required/></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="action" value="Submit"/></td>
+                            <td></td>
+                            <td><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                     </table>
                 </form>

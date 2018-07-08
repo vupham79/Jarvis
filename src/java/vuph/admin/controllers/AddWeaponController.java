@@ -7,10 +7,12 @@ package vuph.admin.controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import vuph.daos.AvengerDAO;
 import vuph.daos.WeaponDAO;
 import vuph.dtos.WeaponDTO;
 
@@ -39,6 +41,9 @@ public class AddWeaponController extends HttpServlet {
         try {
             String action = request.getParameter("action");
             if (action.equals("Add")) {
+                AvengerDAO dao = new AvengerDAO();
+                List<String> avengers = dao.getAvengers();
+                request.setAttribute("AVENGERS", avengers);
                 url = ADD;
             } else if (action.equals("Submit")) {
                 WeaponDAO dao = new WeaponDAO();
@@ -51,7 +56,7 @@ public class AddWeaponController extends HttpServlet {
         } catch (Exception e) {
             log("ERROR at AddWeaponController: " + e.getMessage());
             request.setAttribute("ERROR", "Weapon Existed!");
-            url = ADD;
+            url = SUBMIT;
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

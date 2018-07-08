@@ -12,19 +12,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IRONMAN</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
-                        <li>
-                            <a href="index.jsp">Home</a>
-                        </li>
                         <li class="selected">
                             <a href="ViewAccountController">Account</a>
                         </li>
@@ -38,10 +35,14 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <font color="red">
-                ${requestScope.ERROR}
-                </font>
-                <form action="UpdateAccountController" method="POST">
+                <h2 style="text-align: center">
+                    UPDATE ACCOUNT<br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
+                <form action="MainController" method="POST">
+                    <input type="hidden" name="controller" value="UpdateAccountController"/>
                     <table border="1">
                         <tr>
                             <td>Avenger ID: </td>
@@ -70,14 +71,21 @@
                         <tr>
                             <td>Status: </td>
                             <td>
-                                <font color="purple">Weak <input type="radio" name="status" value="Weak" required/></font>
-                                <font color="red">Injured <input type="radio" name="status" value="Injured" required/></font>
-                                <font color="orange">Good <input type="radio" name="status" value="Good" required/></font>
-                                <font color="green">Excellent <input type="radio" name="status" value="Excellent" required/></font>
+                                <select name="status">
+                                    <option value="Weak">Weak</option>
+                                    <option value="Injured">Injured</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Excellent">Excellent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input class="button" type="submit" name="action" value="Update"/>
                             </td>
                         </tr>
                     </table>
-                    <input type="submit" name="action" value="Update"/>
                 </form>
             </div>
             <div id="footer">

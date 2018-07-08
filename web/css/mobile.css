@@ -203,6 +203,7 @@
 		max-width: 100%;
 	}
 	body #page {
+                background-size: cover;
 		margin: 0;
 		overflow: hidden;
 		padding: 0;

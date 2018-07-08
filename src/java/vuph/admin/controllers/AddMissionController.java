@@ -21,7 +21,7 @@ import vuph.dtos.MissionDTO;
 public class AddMissionController extends HttpServlet {
     private static final String SUBMIT = "ViewMissionController";
     private static final String ADD = "mission/add_mission.jsp";
-    private static final String ERROR = "error.jsp";
+    private static final String ERROR = "/error.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -49,7 +49,8 @@ public class AddMissionController extends HttpServlet {
             }
         } catch (Exception e) {
             log("ERROR at AddMissionController: " + e.getMessage());
-            request.setAttribute("ERROR", "Add Mission Failed!");
+            request.setAttribute("ERROR", "MISSION EXISTED!");
+            url = ADD;
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

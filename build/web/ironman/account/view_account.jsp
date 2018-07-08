@@ -12,19 +12,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IRONMAN</title>
-        <link rel="stylesheet" href="../../css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../../css/mobile.css">
-        <script src="../../js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+        <script src="../js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="../../images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
                     <ul id="navigation">
-                        <li>
-                            <a href="index.jsp">Home</a>
-                        </li>
                         <li class="selected">
                             <a href="ViewAccountController">Account</a>
                         </li>
@@ -38,6 +35,12 @@
                 </div>
             </div>
             <div id="body" class="home">
+                <h2 style="text-align: center">
+                    ACCOUNT<br/>
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    ${requestScope.ERROR}
+                    </font>
+                </h2>
                 <table border="1">
                     <tr>
                         <td>Avenger ID: </td>
@@ -68,13 +71,23 @@
                             </c:if>
                         </td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <form action="MainController" method="POST">
+                                <input type="hidden" name="controller" value="UpdateAccountController"/>
+                                <input class="button" type="submit" name="action" value="Edit"/>
+                                <input type="hidden" name="avengerId" value="${requestScope.AVENGER.getAvengerId()}"/>
+                                <input type="hidden" name="fullname" value="${requestScope.AVENGER.getFullname()}"/>
+                                <input type="hidden" name="role" value="${requestScope.AVENGER.getRole()}"/>
+                            </form>
+                            <form action="MainController" method="POST">
+                                <input type="hidden" name="controller" value="LogoutAccountController"/>
+                                <input class="button" type="submit" name="action" value="Edit"/>
+                            </form>
+                        </td>
+                    </tr>
                 </table>
-                <form action="UpdateAccountController" method="POST">
-                    <input type="submit" name="action" value="Edit"/>
-                    <input type="hidden" name="avengerId" value="${requestScope.AVENGER.getAvengerId()}"/>
-                    <input type="hidden" name="fullname" value="${requestScope.AVENGER.getFullname()}"/>
-                    <input type="hidden" name="role" value="${requestScope.AVENGER.getRole()}"/>
-                </form>
             </div>
             <div id="footer">
                 <div class="connect">
