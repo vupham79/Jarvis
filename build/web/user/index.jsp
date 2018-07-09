@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div id="body" class="home">
-                <h1 style="text-align: center; font-family: monospace;font-size: 30px; color: #a3a3a3">
+                <h1 style="font-weight: bold;text-align: center; text-transform: uppercase; margin-top: 20%;font-family: monospace;font-size: 50px; color: #FFFFFF">
                     Welcome back, ${sessionScope.USERNAME}.
                 </h1>
             </div>

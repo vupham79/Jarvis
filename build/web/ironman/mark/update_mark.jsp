@@ -50,13 +50,14 @@
                         <tr>
                             <td>Status: </td>
                             <td>
-                                Destroyed <input type="radio" name="txtStatus" value="Destroyed" checked required/>
-                                Active <input type="radio" name="txtStatus" value="Active" required/>
+                                <select name="txtStatus">
+                                    <option value="Active">Active</option>
+                                    <option value="Destroyed">Destroyed</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" name="action" value="Update"/></td>
+                            <td colspan="2"><input class="button" type="submit" name="action" value="Update"/></td>
                         </tr>
                     </table>
                 </form>

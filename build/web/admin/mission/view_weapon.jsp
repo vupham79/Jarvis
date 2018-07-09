@@ -85,8 +85,9 @@
                                     <input type="hidden" name="controller" value="DeleteMissionWeaponController"/>
                                     <input type="submit" name="action" value="Delete"/>
                                     <input type="hidden" name="avengerName" value="<%= avengerName%>"/>
+                                    <input type="hidden" name="avengerId" value="<%= avengerId%>"/>
                                     <input type="hidden" name="missionId" value="<%= id%>"/>
-                                    <input type = "hidden" name="weaponId" value="<%= weapons.get(i)%>"/>
+                                    <input type="hidden" name="weaponId" value="<%= weapons.get(i)%>"/>
                                     <input type="hidden" name="date" value="<%= date%>"/>
                                 </form> 
                             </td>
@@ -95,9 +96,7 @@
                             }
                         %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
+                            <td colspan="3">
                                 <form action="MainController" method="POST">
                                     <input type="hidden" name="controller" value="AddMissionWeaponController"/>
                                     <input class="button" type="submit" name="action" value="Add"/>

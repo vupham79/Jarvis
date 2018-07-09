@@ -77,8 +77,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
+                            <td colspan="2">
                                 <input class="button" type="submit" name="action" value="Submit"/>
                             </td>
                         </tr>

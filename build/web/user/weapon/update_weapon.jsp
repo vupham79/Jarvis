@@ -52,8 +52,7 @@
                             <td><input type="text" name="weaponName" value="<%= request.getParameter("weaponName")%>" required/></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" name="action" value="Update"/></td>
+                            <td colspan="2"><input class="button" type="submit" name="action" value="Update"/></td>
                         </tr>
                     </table>
                 </form>

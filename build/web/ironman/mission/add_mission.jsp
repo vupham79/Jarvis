@@ -70,13 +70,14 @@
                         <tr>
                             <td>Status: </td>
                             <td>
-                                Done <input type="radio" name="avengerStatus" value="Done" required/>
-                                In Process <input type="radio" name="avengerStatus" value="In Process" required/>
+                                <select name="avengerStatus">
+                                    <option value="Done">Done</option>
+                                    <option value="In Process">In Process</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" name="action" value="Submit"/></td>
+                            <td colspan="2"><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                         <%
                         } else {

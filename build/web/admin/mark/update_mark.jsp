@@ -56,13 +56,14 @@
                         <tr>
                             <td>Status: </td>
                             <td>
-                                Destroyed <input type="radio" name="txtStatus" value="Destroyed" checked required/>
-                                Active <input type="radio" name="txtStatus" value="Active" required/>
+                                <select name="txtStatus">
+                                    <option value="Destroyed">Destroyed</option>
+                                    <option value="Active">Active</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
+                            <td colspan="2">
                                 <input type="hidden" name="controller" value="UpdateMarkController"/>
                                 <input class="button" type="submit" name="action" value="Update"/>
                             </td>

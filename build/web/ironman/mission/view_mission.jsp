@@ -129,12 +129,7 @@
                             }
                         %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
+                            <td colspan="6">
                                 <form action="MainController" method="POST">
                                     <input class="button" type="submit" name="action" value="Add"/>
                                     <input type="hidden" name="controller" value="AddMissionController"/>

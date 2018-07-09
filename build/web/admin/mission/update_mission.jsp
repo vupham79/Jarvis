@@ -50,12 +50,6 @@
                 <form action="MainController" method="POST">
                     <input type="hidden" name="controller" value="UpdateMissionController"/>
                     <table border="1">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
                                 <td>Mission ID: </td>
@@ -68,25 +62,14 @@
                             <tr>
                                 <td>Status: </td>
                                 <td>
-                                    <%
-                                        if (request.getParameter("txtStatus").equals("Done")) {
-                                    %>
-                                    In Process <input type="radio" name="txtStatus" value="In Process" required/>
-                                    Done <input type="radio" name="txtStatus" value="Done" checked required/>
-                                    <%
-                                    } else {
-                                    %>
-                                    In Process <input type="radio" name="txtStatus" value="In Process" checked required/>
-                                    Done <input type="radio" name="txtStatus" value="Done" required/>
-                                    <%
-                                        }
-                                    %>
+                                    <select name="txtStatus">
+                                        <option value="In Process">In Process</option>
+                                        <option value="Done">Done</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td>    
-                                </td>
-                                <td><input class="button" type="submit" name="action" value="Update"/></td>
+                                <td colspan="2"><input class="button" type="submit" name="action" value="Update"/></td>
                             </tr>
                         </tbody>
                     </table>

@@ -31,6 +31,7 @@ public class MainController extends HttpServlet {
     private static final String UPDATE_MARK_CONTROLLER = "UpdateMarkController";
     private static final String ADD_MARK_CONTROLLER = "AddMarkController";
     private static final String DELETE_MARK_CONTROLLER = "DeleteMarkController";
+    private static final String LOGOUT_ACCOUNT_CONTROLLER = "/LogoutAccountController";
     private static final String ERROR = "../Jarvis_Web/error.jsp";
 
     /**
@@ -76,6 +77,8 @@ public class MainController extends HttpServlet {
                 url = UPDATE_MISSION_WEAPON_CONTROLLER;
             } else if (controller.equals("DeleteMissionWeaponController")) {
                 url = DELETE_MISSION_WEAPON_CONTROLLER;
+            } else if (controller.equals("LogoutAccountController")) {
+                url = LOGOUT_ACCOUNT_CONTROLLER;
             }
         } catch (Exception e) {
             log("ERROR at IronmanMainController: " + e.getMessage());

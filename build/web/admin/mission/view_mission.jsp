@@ -116,11 +116,7 @@
                             }
                         %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
+                            <td colspan="5">
                                 <form action="MainController" method="POST">
                                     <input type="hidden" name="controller" value="AddMissionController"/>
                                     <input type="submit" class="button" name="action" value="Add"/>
@@ -131,7 +127,15 @@
                     <%
                     } else {
                     %>
-                    No mission left!
+                    <h2 style="text-align: center">
+                        <font color="red" style="font-size: 15px;font-family: monospace">
+                        NO MISSIONS LEFT!
+                        <form action="MainController" method="POST">
+                            <input type="hidden" name="controller" value="AddMissionController"/>
+                            <input type="submit" class="button" name="action" value="Add"/>
+                        </form>
+                        </font>
+                    </h2>
                     <%
                         }
                     %>

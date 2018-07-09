@@ -109,15 +109,16 @@
                     <%
                     } else {
                     %>
-                    No mark left!
+                    <h2 style="text-align: center">
+                        <font color="red" style="font-size: 15px;font-family: monospace">
+                        NO MARKS LEFT!
+                        </font>
+                    </h2>
                     <%
                         }
                     %>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+                        <td colspan="4">
                             <form action="MainController" method="POST">
                                 <input type="hidden" name="controller" value="AddMarkController"/>
                                 <input class="button" type="submit" name="action" value="Add"/>

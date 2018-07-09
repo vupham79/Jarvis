@@ -58,56 +58,38 @@
                         <tr>
                             <td>My Task(s): </td>
                             <td>    
-                                Done <input type="radio" name="avengerStatus" value="Done" required/>
-                                In Process <input type="radio" name="avengerStatus" value="In Process" required/>
+                                <select name="avengerStatus">
+                                    <option value="Done">Done</option>
+                                    <option value="In Process">In Process</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
+                            <td colspan="2">
                                 <input class="button" type="submit" name="action" value="Update"/>
                             </td>
                         </tr>
                     </table>
                 </form>
-                <div id="footer">
-                    <div class="connect">
-                        <div>
-                            <h1>FOLLOW OUR  MISSIONS ON</h1>
-                            <div>
-                                <a href="http://freewebsitetemplates.com/go/facebook/" class="facebook">facebook</a>
-                                <a href="http://freewebsitetemplates.com/go/twitter/" class="twitter">twitter</a>
-                                <a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus">googleplus</a>
-                                <a href="http://pinterest.com/fwtemplates/" class="pinterest">pinterest</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footnote">
-                        <div>
-                            <p>&copy; 1998 BY THE AVENGERS | ALL RIGHTS RESERVED</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div id="footer">
-            <div class="connect">
-                <div>
-                    <h1>FOLLOW OUR  MISSIONS ON</h1>
+            <div id="footer">
+                <div class="connect">
                     <div>
-                        <a href="" class="facebook">facebook</a>
-                        <a href="" class="twitter">twitter</a>
-                        <a href="" class="googleplus">googleplus</a>
-                        <a href="" class="pinterest">pinterest</a>
+                        <h1>FOLLOW OUR  MISSIONS ON</h1>
+                        <div>
+                            <a href="" class="facebook">facebook</a>
+                            <a href="" class="twitter">twitter</a>
+                            <a href="" class="googleplus">googleplus</a>
+                            <a href="" class="pinterest">pinterest</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footnote">
+                    <div>
+                        <p>&copy; 1998 BY THE AVENGERS | ALL RIGHTS RESERVED</p>
                     </div>
                 </div>
             </div>
-            <div class="footnote">
-                <div>
-                    <p>&copy; 1998 BY THE AVENGERS | ALL RIGHTS RESERVED</p>
-                </div>
-            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

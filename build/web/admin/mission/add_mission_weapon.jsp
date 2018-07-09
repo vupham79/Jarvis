@@ -93,13 +93,14 @@
                             <tr>
                                 <td>Which to add: </td>
                                 <td>
-                                    Weapon <input type="radio" name="type" value="Weapon" checked required/>
-                                    Mark <input type="radio" name="type" value="Mark" required/>
+                                    <select name="type">
+                                        <option value="Weapon">Weapon</option>
+                                        <option value="Mark">Mark</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td><input class="button" type="submit" name="action" value="Submit"/></td>
+                                <td colspan="2"><input class="button" type="submit" name="action" value="Submit"/></td>
                             </tr>
                         </tbody>
                     </table>

@@ -72,13 +72,14 @@
                         <tr>
                             <td>Status: </td>
                             <td>
-                                In Process <input type="radio" name="status" value="In Process" required/>
-                                Done <input type="radio" name="status" value="Done" checked required/>
+                                <select name="status">
+                                    <option value="In Process">In Process</option>
+                                    <option value="Done">Done</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" name="action" value="Submit"/></td>
+                            <td colspan="2"><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                     </table>
                 </form>

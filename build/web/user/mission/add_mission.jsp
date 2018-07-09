@@ -56,26 +56,29 @@
                                     if (missions.size() > 0) {
                             %>
                             <td>
-                                <%
-                                    for (int i = 0; i < missions.size(); i++) {
-                                %>
-                                <%= missions.get(i)%>
-                                <input type="radio" name="missionId" value="<%= missions.get(i)%>" required/>
-                                <%
-                                    }
-                                %>
+                                <select name="missionId">
+                                    <%
+                                        for (int i = 0; i < missions.size(); i++) {
+                                    %>
+                                    <%= missions.get(i)%>
+                                    <option value="<%= missions.get(i)%>"><%= missions.get(i)%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
                             </td>
                         </tr>
                         <tr>
                             <td>My Task(s): </td>
                             <td>
-                                Done <input type="radio" name="avengerStatus" value="Done" required/>
-                                In Process <input type="radio" name="avengerStatus" value="In Process" required/>
+                                <select name="avengerStatus">
+                                    <option value="Done">Done</option>
+                                    <option value="In Process">In Process</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" name="action" value="Submit"/></td>
+                            <td colspan="2"><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                         <%
                         } else {

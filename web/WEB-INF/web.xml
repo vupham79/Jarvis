@@ -241,8 +241,8 @@
         <servlet-class>vuph.user.controllers.MainController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AdminLogoutAccountController</servlet-name>
-        <servlet-class>vuph.admin.controllers.LogoutAccountController</servlet-class>
+        <servlet-name>LogoutAccountController</servlet-name>
+        <servlet-class>vuph.controllers.LogoutAccountController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ViewAccountController</servlet-name>
@@ -477,8 +477,8 @@
         <url-pattern>/user/MainController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AdminLogoutAccountController</servlet-name>
-        <url-pattern>/admin/LogoutAccountController</url-pattern>
+        <servlet-name>LogoutAccountController</servlet-name>
+        <url-pattern>/LogoutAccountController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vuph.admin.controllers;
+package vuph.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,10 +31,11 @@ public class LogoutAccountController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             request.getSession().removeAttribute("USERNAME");
+            request.getSession().removeAttribute("ROLE");
         } catch (Exception e) {
             log("ERROR at LoginAccountController: " + e.getMessage());
         } finally {
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            response.sendRedirect("/Jarvis_Web/login.jsp");
         }
     }
 

@@ -52,8 +52,7 @@
                             <td><input type="text" name="weaponName" value="${param.weaponName}" required/></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" name="action" value="Submit"/></td>
+                            <td colspan="2"><input class="button" type="submit" name="action" value="Submit"/></td>
                         </tr>
                     </table>
                 </form>

@@ -54,10 +54,11 @@
                             <td>Weapon: </td>
                             <td>
                                 <c:if test="${requestScope.WEAPONS.size() > 0}" var="isAvailable">
-                                    <c:forEach var="weapon" items="${requestScope.WEAPONS}">
-                                        ${weapon}<input type="radio" name="weaponId" value="${weapon}" required/>
-                                        <br/>
-                                    </c:forEach>
+                                    <select name="weaponId">
+                                        <c:forEach var="weapon" items="${requestScope.WEAPONS}">
+                                            <option value="${weapon}">${weapon}</option>
+                                        </c:forEach>
+                                    </select>
                                 </c:if>
                                 <c:if test="${!isAvailable}">
                                     All your weapons being used for this mission !
@@ -65,8 +66,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
+                            <td colspan="2">
                                 <input class="button" type="submit" name="action" value="Submit"/>
                             </td>
                         </tr>

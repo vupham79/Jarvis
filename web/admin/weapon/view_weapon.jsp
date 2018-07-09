@@ -91,11 +91,7 @@
                             }
                         %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
+                            <td colspan="5">
                                 <form action="MainController" method="POST">
                                     <input type="hidden" name="controller" value="AddWeaponController"/>
                                     <input class="button" type="submit" name="action" value="Add"/>

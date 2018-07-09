@@ -64,18 +64,22 @@
                         <tr>
                             <td>Role: </td>
                             <td>
-                                Admin <input type="radio" name="txtRole" value="admin" required/>
-                                Iron Man <input type="radio" name="txtRole" value="ironman" required/>
-                                User <input type="radio" name="txtRole" value="user" checked required/>
+                                <select name="txtRole">
+                                    <option value="admin">Admin</option>
+                                    <option value="ironman">Iron Man</option>
+                                    <option value="user">User</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Status: </td>
                             <td>
-                                Weak <input type="radio" name="txtStatus" value="Weak" required/>
-                                Injured <input type="radio" name="txtStatus" value="Injured" required/>
-                                Good <input type="radio" name="txtStatus" value="Good" required/>
-                                Excellent <input type="radio" name="txtStatus" value="Excellent" checked required/>
+                                <select name="txtStatus">
+                                    <option value="Weak">Weak</option>
+                                    <option value="Injured">Injured</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Excellent">Excellent</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>

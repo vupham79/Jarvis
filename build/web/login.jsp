@@ -33,15 +33,9 @@
                                 ${requestScope.INVALID.getPasswordError()}
                                 </font>
                             </h3>
-                            <tr>
-                                <td><input type="text" name="txtUsername" placeholder="Username"/></td>
-                            </tr>
-                            <tr>
-                                <td><input type="password" name="txtPassword" placeholder="Password"/></td>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" name="action" value="Login"</td>
-                            </tr>
+                            <input type="text" name="txtUsername" placeholder="Username"/>
+                            <input type="password" name="txtPassword" placeholder="Password"/>
+                            <input type="submit" name="action" value="Login"/>
                         </form>
                     </div>
                 </div>

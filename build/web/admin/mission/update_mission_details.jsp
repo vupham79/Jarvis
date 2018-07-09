@@ -68,13 +68,14 @@
                                     Task(s) Status: 
                                 </td>
                                 <td>
-                                    Done <input type="radio" name="status" value="Done" checked required/>
-                                    In Process <input type="radio" name="status" value="In Process" required/>
+                                    <select name="status">
+                                        <option value="Done">Done</option>
+                                        <option value="In Process">In Proces</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td>
+                                <td colspan="2">
                                     <input type="hidden" name="date" value="<%= request.getParameter("date")%>"/>
                                     <input type="submit" class="button" name="action" value="Submit"/>
                                 </td>

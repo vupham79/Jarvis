@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MainController extends HttpServlet {
 
     private static final String VIEW_ACCOUNT_CONTROLLER = "ViewAccountController";
+    private static final String LOGOUT_ACCOUNT_CONTROLLER = "/LogoutAccountController";
     private static final String UPDATE_ACCOUNT_CONTROLLER = "UpdateAccountController";
     private static final String VIEW_MISSION_CONTROLLER = "ViewMissionController";
     private static final String UPDATE_MISSION_CONTROLLER = "UpdateMissionController";
@@ -76,6 +77,8 @@ public class MainController extends HttpServlet {
                 url = UPDATE_MISSION_WEAPON_CONTROLLER;
             } else if (controller.equals("DeleteMissionWeaponController")) {
                 url = DELETE_MISSION_WEAPON_CONTROLLER;
+            } else if (controller.equals("LogoutAccountController")) {
+                url = LOGOUT_ACCOUNT_CONTROLLER;
             }
         } catch (Exception e) {
             log("ERROR at UserMainController: " + e.getMessage());

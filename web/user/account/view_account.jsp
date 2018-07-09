@@ -72,14 +72,17 @@
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>
+                        <td colspan="2">
                             <form action="MainController" method="POST">
                                 <input type="hidden" name="controller" value="UpdateAccountController"/>
                                 <input class="button" type="submit" name="action" value="Edit"/>
                                 <input type="hidden" name="avengerId" value="${requestScope.AVENGER.getAvengerId()}"/>
                                 <input type="hidden" name="fullname" value="${requestScope.AVENGER.getFullname()}"/>
                                 <input type="hidden" name="role" value="${requestScope.AVENGER.getRole()}"/>
+                            </form>
+                            <form action="MainController" method="POST">
+                                <input type="hidden" name="controller" value="LogoutAccountController"/>
+                                <input type="submit" value="Logout"/>
                             </form>
                         </td>
                     </tr>

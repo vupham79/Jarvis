@@ -71,15 +71,16 @@
                         <tr>
                             <td>Status: </td>
                             <td>
-                                <font color="purple">Weak <input type="radio" name="status" value="Weak" required/></font>
-                                <font color="red">Injured <input type="radio" name="status" value="Injured" required/></font>
-                                <font color="orange">Good <input type="radio" name="status" value="Good" required/></font>
-                                <font color="green">Excellent <input type="radio" name="status" value="Excellent" required/></font>
+                                <select name="status">
+                                    <option value="Weak">Weak</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Injured">Injured</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
+                            <td colspan="2">
                                 <input class="button" type="submit" name="action" value="Update"/>
                             </td>
                         </tr>

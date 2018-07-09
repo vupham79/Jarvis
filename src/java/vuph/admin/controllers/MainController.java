@@ -43,7 +43,7 @@ public class MainController extends HttpServlet {
     private static final String UPDATE_MISSION_DETAIL_CONTROLLER = "UpdateMissionDetailController";
     private static final String ADD_MISSION_DETAIL_CONTROLLER = "AddMissionDetailController";
     private static final String DELETE_MISSION_DETAIL_CONTROLLER = "DeleteMissionDetailController";
-    private static final String LOGOUT_ACCOUNT_CONTROLLER = "LogoutAccountController";
+    private static final String LOGOUT_ACCOUNT_CONTROLLER = "/LogoutAccountController";
     private static final String ERROR = "../Jarvis_Web/error.jsp";
 
     /**
