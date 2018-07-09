@@ -19,9 +19,9 @@ import vuph.dtos.AvengerDTO;
  */
 public class UpdateAccountController extends HttpServlet {
 
-    private static final String UPDATE = "ViewAccountController";
-    private static final String EDIT = "account/update_account.jsp";
-    private static final String ERROR = "error.jsp";
+    private static final String UPDATE = "/Jarvis_Web/admin/ViewAccountController";
+    private static final String EDIT = "/Jarvis_Web/admin/account/update_account.jsp";
+    private static final String ERROR = "/Jarvis_Web/error.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

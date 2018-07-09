@@ -40,6 +40,7 @@
                     <font color="red" style="font-size: 15px;font-family: monospace">
                     ${requestScope.ERROR}
                     </font>
+                    <img style="height: 200px; max-width: 500px" src="/Jarvis_Web/images/Avatars/${sessionScope.USERNAME}" alt=""/>
                 </h2>
                 <table border="1">
                     <tr>

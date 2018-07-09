@@ -45,6 +45,15 @@
                     <input type="hidden" name="controller" value="UpdateAccountController"/>
                     <table border="1">
                         <tr>
+                            <td>Avatar: </td>
+                            <td>
+                                <input type="file" name="avatar" onchange="previewFile()">
+                                <br/>
+                                <br/>
+                                <img id="previewAvatar" src="/Jarvis_Web/images/Avatars/${sessionScope.USERNAME}" height="200" alt="Image preview...">
+                            </td>
+                        </tr>
+                        <tr>
                             <td>Avenger ID: </td>
                             <td><input type="text" name="avengerId" value="${param.avengerId}" readonly/></td>
                         </tr>
