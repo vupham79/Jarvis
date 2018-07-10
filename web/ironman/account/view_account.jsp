@@ -12,24 +12,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IRONMAN</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
-        <script src="../js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/Jarvis_Web/css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/Jarvis_Web/css/mobile.css">
+        <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="/Jarvis_Web/images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li class="selected">
-                            <a href="ViewAccountController">Account</a>
+                            <a href="/Jarvis_Web/ironman/ViewAccountController">Account</a>
                         </li>
                         <li>                            
-                            <a href="ViewMissionController">Missions</a>
+                            <a href="/Jarvis_Web/ironman/ViewMissionController">Missions</a>
                         </li>
                         <li>
-                            <a href="ViewMarkController">Marks</a>
+                            <a href="/Jarvis_Web/ironman/ViewMarkController">Marks</a>
                         </li>
                     </ul>
                 </div>
@@ -39,7 +39,9 @@
                     ACCOUNT<br/>
                     <font color="red" style="font-size: 15px;font-family: monospace">
                     ${requestScope.ERROR}
+                    ${requestScope.MESSAGE}
                     </font>
+                    <br/>
                     <img style="height: 200px; max-width: 500px" src="/Jarvis_Web/images/Avatars/${sessionScope.USERNAME}" alt=""/>
                 </h2>
                 <table border="1">
@@ -74,14 +76,14 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <form action="MainController" method="POST">
+                            <form action="/Jarvis_Web/ironman/MainController" method="POST">
                                 <input type="hidden" name="controller" value="UpdateAccountController"/>
                                 <input class="button" type="submit" name="action" value="Edit"/>
                                 <input type="hidden" name="avengerId" value="${requestScope.AVENGER.getAvengerId()}"/>
                                 <input type="hidden" name="fullname" value="${requestScope.AVENGER.getFullname()}"/>
                                 <input type="hidden" name="role" value="${requestScope.AVENGER.getRole()}"/>
                             </form>
-                            <form action="MainController" method="POST">
+                            <form action="/Jarvis_Web/ironman/MainController" method="POST">
                                 <input type="hidden" name="controller" value="LogoutAccountController"/>
                                 <input type="submit" value="Logout"/>
                             </form>

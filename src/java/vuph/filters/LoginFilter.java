@@ -112,11 +112,11 @@ public class LoginFilter implements Filter {
                             chain.doFilter(request, response);
                         } else {
                             req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                            req.getRequestDispatcher("/Jarvis_Web/error.jsp").forward(req, res);
+                            req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
                         req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                        req.getRequestDispatcher("/Jarvis_Web/error.jsp").forward(req, res);
+                        req.getRequestDispatcher("../error.jsp").forward(req, res);
                     }
                     break;
                 }
@@ -127,11 +127,11 @@ public class LoginFilter implements Filter {
                             chain.doFilter(request, response);
                         } else {
                             req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                            req.getRequestDispatcher("/Jarvis_Web/error.jsp").forward(req, res);
+                            req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
                         req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                        req.getRequestDispatcher("/Jarvis_Web/error.jsp").forward(req, res);
+                        req.getRequestDispatcher("../error.jsp").forward(req, res);
                     }
                     break;
                 }
@@ -142,11 +142,11 @@ public class LoginFilter implements Filter {
                             chain.doFilter(request, response);
                         } else {
                             req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                            req.getRequestDispatcher("/Jarvis_Web/error.jsp").forward(req, res);
+                            req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
                         req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                        req.getRequestDispatcher("/Jarvis_Web/error.jsp").forward(req, res);
+                        req.getRequestDispatcher("../error.jsp").forward(req, res);
                     }
                     break;
                 }

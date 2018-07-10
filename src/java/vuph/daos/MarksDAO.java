@@ -21,6 +21,19 @@ import vuph.utils.MyConnection;
  */
 public class MarksDAO implements Serializable {
 
+    public boolean updateMarkImage(String markId, String path) throws ClassNotFoundException, SQLException {
+        boolean result;
+        String sql = "UPDATE Marks SET Image=? "
+                + "WHERE MarkId=?";
+        try (Connection conn = MyConnection.getConnection();
+                PreparedStatement preStm = conn.prepareStatement(sql)) {
+            preStm.setString(1, path);
+            preStm.setString(2, markId);
+            result = preStm.executeUpdate() > 0;
+        }
+        return result;
+    }
+
     public List<MarksDTO> getAllMarks() throws ClassNotFoundException, SQLException {
         List<MarksDTO> result;
         String sql = "SELECT MarkId, MarkStatus "

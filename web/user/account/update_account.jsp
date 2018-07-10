@@ -12,24 +12,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MEMBER</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
-        <script src="../js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/Jarvis_Web/css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/Jarvis_Web/css/mobile.css">
+        <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="/Jarvis_Web/images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li class="selected">
-                            <a href="ViewAccountController">Account</a>
+                            <a href="/Jarvis_Web/user/ViewAccountController">Account</a>
                         </li>
                         <li>                            
-                            <a href="ViewMissionController">Missions</a>
+                            <a href="/Jarvis_Web/user/ViewMissionController">Missions</a>
                         </li>
                         <li>
-                            <a href="ViewWeaponController">Weapon</a>
+                            <a href="/Jarvis_Web/user/ViewWeaponController">Weapon</a>
                         </li>
                     </ul>
                 </div>
@@ -40,19 +40,16 @@
                     <font color="red" style="font-size: 15px;font-family: monospace">
                     ${requestScope.ERROR}
                     </font>
+                    <br/>
+                    <img style="height: 200px; max-width: 500px" src="/Jarvis_Web/images/Avatars/${sessionScope.USERNAME}" alt=""/>
+                    <form method="post" action="/Jarvis_Web/admin/UpdateAvatarController" enctype="multipart/form-data">
+                        <input type="file" name="uploadFile" />
+                        <input type="submit" value="Upload" />
+                    </form>
                 </h2>
-                <form action="MainController" method="POST">
+                <form action="/Jarvis_Web/user/MainController" method="POST">
                     <input type="hidden" name="controller" value="UpdateAccountController"/>
                     <table border="1">
-                        <tr>
-                            <td>Avatar: </td>
-                            <td>
-                                <input type="file" name="avatar" onchange="previewFile()">
-                                <br/>
-                                <br/>
-                                <img id="previewAvatar" src="/Jarvis_Web/images/Avatars/${sessionScope.USERNAME}" height="200" alt="Image preview...">
-                            </td>
-                        </tr>
                         <tr>
                             <td>Avenger ID: </td>
                             <td><input type="text" name="avengerId" value="${param.avengerId}" readonly/></td>

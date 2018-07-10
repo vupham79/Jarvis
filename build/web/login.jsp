@@ -11,12 +11,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign In</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/mobile.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
-        <script src="../js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/Jarvis_Web/css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/Jarvis_Web/css/mobile.css">
+        <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
     </head>
     <body>        
         <div id="page">
@@ -25,7 +22,7 @@
                     <div class="contact">
                         <h1>LOG In</h1>
                         <h2>Welcome to avengers world</h2>
-                        <form action="MainController" method="POST">
+                        <form action="/Jarvis_Web/MainController" method="POST">
                             <h3 style="text-align: center">
                                 <font color="red" style="font-family: monospace">
                                 ${requestScope.ERROR}

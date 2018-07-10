@@ -11,30 +11,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
-        <script src="../js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/Jarvis_Web/css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/Jarvis_Web/css/mobile.css">
+        <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="/Jarvis_Web/images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
-                            <a href="ViewAccountController">Account</a>
+                            <a href="/Jarvis_Web/admin/ViewAccountController">Account</a>
                         </li>
                         <li>
-                            <a href="ViewAvengerController">Avengers</a>
+                            <a href="/Jarvis_Web/admin/ViewAvengerController">Avengers</a>
                         </li>
                         <li>                            
-                            <a href="ViewMissionController">Missions</a>
+                            <a href="/Jarvis_Web/admin/ViewMissionController">Missions</a>
                         </li>
                         <li>
-                            <a href="ViewWeaponController">Weapons</a>
+                            <a href="/Jarvis_Web/admin/ViewWeaponController">Weapons</a>
                         </li>
                         <li class="selected">
-                            <a href="ViewMarkController">Marks</a>
+                            <a href="/Jarvis_Web/admin/ViewMarkController">Marks</a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,15 @@
                     <br/>
                     <font color="red" style="font-size: 15px;font-family: monospace">
                     ${requestScope.ERROR}
+                    ${requestScope.MESSAGE}
                     </font>
+                    <br/>
+                    <img style="height: 200px; max-width: 500px" src="/Jarvis_Web/images/Marks/<%= request.getParameter("txtId")%>" alt="Mark Image"/>
+                    <form method="post" action="/Jarvis_Web/admin/UpdateMarkAvatarController" enctype="multipart/form-data">
+                        <input type="hidden" name="txtId" value="<%= request.getParameter("txtId")%>"/>
+                        <input type="file" name="uploadFile"/>
+                        <input type="submit" value="Upload" />
+                    </form>
                 </h2>
                 <form action="MainController" method="POST">
                     <table border="1">

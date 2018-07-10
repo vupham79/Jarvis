@@ -13,24 +13,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MEMBER</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../css/mobile.css">
-        <script src="../js/mobile.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="/Jarvis_Web/css/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/Jarvis_Web/css/mobile.css">
+        <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="page">
             <div id="header">
                 <div>
-                    <a class="logo"><img src="../images/logoo.png" alt=""></a>
+                    <a class="logo"><img src="/Jarvis_Web/images/logoo.png" alt=""></a>
                     <ul id="navigation">
                         <li>
-                            <a href="ViewAccountController">Account</a>
+                            <a href="/Jarvis_Web/user/ViewAccountController">Account</a>
                         </li>
                         <li>                            
-                            <a href="ViewMissionController">Missions</a>
+                            <a href="/Jarvis_Web/user/ViewMissionController">Missions</a>
                         </li>
                         <li class="selected">
-                            <a href="ViewWeaponController">Weapon</a>
+                            <a href="/Jarvis_Web/user/ViewWeaponController">Weapon</a>
                         </li>
                     </ul>
                 </div>
@@ -66,13 +66,13 @@
                             <td><%= dto.getWeaponId()%></td>
                             <td><%= dto.getWeaponName()%></td>
                             <td>
-                                <form action="MainController" method="POST">
+                                <form action="/Jarvis_Web/user/MainController" method="POST">
                                     <input type="hidden" name="controller" value="UpdateWeaponController"/>
                                     <input type="submit" name="action" value="Edit"/>
                                     <input type="hidden" name="weaponId" value="<%= dto.getWeaponId()%>"/>
                                     <input type="hidden" name="weaponName" value="<%= dto.getWeaponName()%>"/>
                                 </form>
-                                <form action="MainController" method="POST">
+                                <form action="/Jarvis_Web/user/MainController" method="POST">
                                     <input type="hidden" name="controller" value="DeleteWeaponController"/>
                                     <input type="submit" name="action" value="Delete"/>
                                     <input type="hidden" name="weaponId" value="<%= dto.getWeaponId()%>"/>
@@ -84,7 +84,7 @@
                         %>
                         <tr>
                             <td colspan="4">
-                                <form action="MainController" method="POST">
+                                <form action="/Jarvis_Web/user/MainController" method="POST">
                                     <input type="hidden" name="controller" value="AddWeaponController"/>
                                     <input type="submit" name="action" value="Add"/>
                                 </form>
@@ -98,7 +98,7 @@
                         <font color="red" style="font-size: 15px;font-family: monospace">
                         NO WEAPONS!
                         </font>
-                        <form action="MainController" method="POST">
+                        <form action="/Jarvis_Web/user/MainController" method="POST">
                             <input type="hidden" name="controller" value="AddWeaponController"/>
                             <input type="submit" name="action" value="Add"/>
                         </form>

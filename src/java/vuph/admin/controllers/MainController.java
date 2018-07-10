@@ -44,7 +44,7 @@ public class MainController extends HttpServlet {
     private static final String ADD_MISSION_DETAIL_CONTROLLER = "AddMissionDetailController";
     private static final String DELETE_MISSION_DETAIL_CONTROLLER = "DeleteMissionDetailController";
     private static final String LOGOUT_ACCOUNT_CONTROLLER = "/LogoutAccountController";
-    private static final String ERROR = "../Jarvis_Web/error.jsp";
+    private static final String ERROR = "/error.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -115,9 +115,12 @@ public class MainController extends HttpServlet {
                 url = DELETE_MISSION_WEAPON_CONTROLLER;
             } else if (controller.equals("LogoutAccountController")) {
                 url = LOGOUT_ACCOUNT_CONTROLLER;
+            } else {
+                request.setAttribute("ERROR", "PAGE NOT FOUND!");
             }
         } catch (Exception e) {
             log("ERROR at AdminMainController: " + e.getMessage());
+            request.setAttribute("ERROR", "PAGE NOT FOUND!");
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

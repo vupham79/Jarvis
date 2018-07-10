@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/account/view_account.jsp</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/ironman/account/update_account.jsp</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/admin/account/update_account.jsp</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/css/style.css</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/user/account/view_account.jsp</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/user/account/update_account.jsp</file>
-            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/web/ironman/account/view_account.jsp</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/daos/MarksDAO.java</file>
+            <file>file:/C:/Users/VU%20PHAM/Desktop/fpt/Semester%204/Based-web%20Java/SE1267/Jarvis_Web/src/java/vuph/admin/controllers/UpdateMarkAvatarController.java</file>
         </group>
     </open-files>
 </project-private>

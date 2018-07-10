@@ -244,6 +244,26 @@
         <servlet-name>LogoutAccountController</servlet-name>
         <servlet-class>vuph.controllers.LogoutAccountController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminUpdateAvatarController</servlet-name>
+        <servlet-class>vuph.admin.controllers.UpdateAvatarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IronmanUpdateAvatarController</servlet-name>
+        <servlet-class>vuph.ironman.controllers.UpdateAvatarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserUpdateAvatarController</servlet-name>
+        <servlet-class>vuph.user.controllers.UpdateAvatarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminUpdateMarkAvatarController</servlet-name>
+        <servlet-class>vuph.admin.controllers.UpdateMarkAvatarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IronmanUpdateMarkAvatarController</servlet-name>
+        <servlet-class>vuph.ironman.controllers.UpdateMarkAvatarController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ViewAccountController</servlet-name>
         <url-pattern>/admin/ViewAccountController</url-pattern>
@@ -479,6 +499,26 @@
     <servlet-mapping>
         <servlet-name>LogoutAccountController</servlet-name>
         <url-pattern>/LogoutAccountController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUpdateAvatarController</servlet-name>
+        <url-pattern>/admin/UpdateAvatarController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IronmanUpdateAvatarController</servlet-name>
+        <url-pattern>/ironman/UpdateAvatarController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserUpdateAvatarController</servlet-name>
+        <url-pattern>/user/UpdateAvatarController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUpdateMarkAvatarController</servlet-name>
+        <url-pattern>/admin/UpdateMarkAvatarController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IronmanUpdateMarkAvatarController</servlet-name>
+        <url-pattern>/ironman/UpdateMarkAvatarController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

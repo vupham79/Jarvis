@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1 style="text-align: center">
-            <img src="../images/gif/error.gif" alt=""/>
+            <img src="/Jarvis_Web/images/gif/error.gif" alt=""/>
             <br/>
             <font color="red">
             ${requestScope.ERROR}
