@@ -115,8 +115,8 @@ public class LoginFilter implements Filter {
                             req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
-                        req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                        req.getRequestDispatcher("../error.jsp").forward(req, res);
+                        req.setAttribute("ERROR", "PLEASE LOG IN FIRST!");
+                        req.getRequestDispatcher("../login.jsp").forward(req, res);
                     }
                     break;
                 }
@@ -130,8 +130,8 @@ public class LoginFilter implements Filter {
                             req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
-                        req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                        req.getRequestDispatcher("../error.jsp").forward(req, res);
+                        req.setAttribute("ERROR", "PLEASE LOG IN FIRST!");
+                        req.getRequestDispatcher("../login.jsp").forward(req, res);
                     }
                     break;
                 }
@@ -145,8 +145,8 @@ public class LoginFilter implements Filter {
                             req.getRequestDispatcher("../error.jsp").forward(req, res);
                         }
                     } else {
-                        req.setAttribute("ERROR", "YOU ARE NOT ALLOWED TO ENTER THIS PAGE!");
-                        req.getRequestDispatcher("../error.jsp").forward(req, res);
+                        req.setAttribute("ERROR", "PLEASE LOG IN FIRST!");
+                        req.getRequestDispatcher("../login.jsp").forward(req, res);
                     }
                     break;
                 }

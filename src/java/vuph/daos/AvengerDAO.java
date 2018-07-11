@@ -152,4 +152,25 @@ public class AvengerDAO implements Serializable {
         }
         return result;
     }
+
+    public List<AvengerDTO> findByLikeFullname(String search) throws ClassNotFoundException, SQLException {
+        List<AvengerDTO> result;
+        String sql = "SELECT AvengerId, Fullname, Role, Status "
+                + "FROM Members "
+                + "WHERE Fullname LIKE ?";
+        try (Connection conn = MyConnection.getConnection();
+                PreparedStatement preStm = conn.prepareStatement(sql)) {
+            preStm.setString(1, "%" + search + "%");
+            ResultSet rs = preStm.executeQuery();
+            result = new ArrayList<>();
+            while (rs.next()) {
+                String id = rs.getString("AvengerId");
+                String fullname = rs.getString("Fullname");
+                String role = rs.getString("Role");
+                String status = rs.getString("Status");
+                result.add(new AvengerDTO(id, fullname, role, status));
+            }
+        }
+        return result;
+    }
 }

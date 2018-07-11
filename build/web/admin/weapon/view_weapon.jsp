@@ -47,6 +47,15 @@
                     ${requestScope.ERROR}
                     </font>
                 </h2>
+                <form action="MainController" style="margin: 0 0 0 60%;max-width: 300px;">
+                    <input type="text" name="search" placeholder="Search by ID..."/>
+                    <input type="submit" value="Search"/>
+                    <input type="hidden" name="controller" value="SearchWeaponController"/>
+                </form>
+                <%
+                    List<WeaponDTO> list = (List<WeaponDTO>) request.getAttribute("WEAPONS");
+                    if (list.size() > 0) {
+                %>
                 <table border="1">
                     <thead>
                         <tr>
@@ -57,10 +66,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <%
-                        List<WeaponDTO> list = (List<WeaponDTO>) request.getAttribute("WEAPONS");
-                        if (list.size() > 0) {
-                    %>
                     <tbody>
                         <%
                             int count = 0;

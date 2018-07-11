@@ -48,6 +48,15 @@
                     ${requestScope.ERROR}
                     </font>
                 </h2>
+                <form action="MainController" style="margin: 0 0 0 60%;max-width: 300px;">
+                    <input type="text" name="search" placeholder="Search by ID..."/>
+                    <input type="submit" value="Search"/>
+                    <input type="hidden" name="controller" value="SearchMarkController"/>
+                </form>
+                <%
+                    List<MarksDTO> list = (List<MarksDTO>) request.getAttribute("MARKS");
+                    if (list.size() > 0) {
+                %>
                 <table border="1">
                     <thead>
                         <tr>
@@ -57,10 +66,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <%
-                        List<MarksDTO> list = (List<MarksDTO>) request.getAttribute("MARKS");
-                        if (list.size() > 0) {
-                    %>
                     <tbody>
                         <%
                             int count = 0;
@@ -71,7 +76,7 @@
                             <td>
                                 <%= count%>
                     <center>
-                        <img style="max-height: 200px" src="/Jarvis_Web/images/Marks/<%= dto.getMarkId()%>"/>
+                        <img style="max-height: 100px" src="/Jarvis_Web/images/Marks/<%= dto.getMarkId()%>"/>
                     </center>        
                     </td>
                     <td><%= dto.getMarkId()%></td>
@@ -110,18 +115,6 @@
                     <%
                         }
                     %>
-                    </tbody>
-                    <%
-                    } else {
-                    %>
-                    <h2 style="text-align: center">
-                        <font color="red" style="font-size: 15px;font-family: monospace">
-                        NO MARKS LEFT!
-                        </font>
-                    </h2>
-                    <%
-                        }
-                    %>
                     <tr>
                         <td colspan="4">
                             <form action="MainController" method="POST">
@@ -130,7 +123,23 @@
                             </form>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
+                <%
+                } else {
+                %>
+                <h2 style="text-align: center">
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    NO MARKS LEFT!
+                    </font>
+                    <form action="MainController" method="POST">
+                        <input type="hidden" name="controller" value="AddMarkController"/>
+                        <input class="button" type="submit" name="action" value="Add"/>
+                    </form>
+                </h2>
+                <%
+                    }
+                %>
             </div>
             <div id="footer">
                 <div class="connect">

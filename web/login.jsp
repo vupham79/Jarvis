@@ -20,20 +20,22 @@
             <div id="body">
                 <div class="header">
                     <div class="contact">
-                        <h1>LOG In</h1>
-                        <h2>Welcome to avengers world</h2>
-                        <form action="/Jarvis_Web/MainController" method="POST">
-                            <h3 style="text-align: center">
-                                <font color="red" style="font-family: monospace">
-                                ${requestScope.ERROR}
-                                ${requestScope.INVALID.getUsernameError()}
-                                ${requestScope.INVALID.getPasswordError()}
-                                </font>
-                            </h3>
-                            <input type="text" name="txtUsername" placeholder="Username"/>
-                            <input type="password" name="txtPassword" placeholder="Password"/>
-                            <input type="submit" name="action" value="Login"/>
-                        </form>
+                        <div class="login">
+                            <h1>LOG In</h1>
+                            <h2>Welcome to avengers world</h2>
+                            <form action="/Jarvis_Web/MainController" method="POST">
+                                <h3 style="text-align: center">
+                                    <font color="red" style="font-family: monospace">
+                                    ${requestScope.ERROR}
+                                    ${requestScope.INVALID.getUsernameError()}
+                                    ${requestScope.INVALID.getPasswordError()}
+                                    </font>
+                                </h3>
+                                <input type="text" name="txtUsername" placeholder="Username"/>
+                                <input type="password" name="txtPassword" placeholder="Password"/>
+                                <input type="submit" name="action" value="Login"/>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -48,6 +48,15 @@
                     ${requestScope.ERROR}
                     </font>
                 </h2>
+                <%
+                    List<AvengerDTO> list = (List<AvengerDTO>) request.getAttribute("AVENGERS");
+                    if (list.size() > 0) {
+                %>
+                <form action="MainController" style="margin: 0 0 0 60%;max-width: 300px;">
+                    <input type="text" name="search" placeholder="Search by fullname..."/>
+                    <input type="submit" value="Search"/>
+                    <input type="hidden" name="controller" value="SearchAvengerController"/>
+                </form>
                 <table border="1">
                     <thead>
                         <tr>
@@ -59,20 +68,17 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <%
-                        List<AvengerDTO> list = (List<AvengerDTO>) request.getAttribute("AVENGERS");
-                        if (list.size() > 0) {
-                    %>
                     <tbody>
                         <%
                             int count = 0;
                             for (AvengerDTO dto : list) {
                                 count++;
                         %>
-                    <td>
-                        <%= count%>
+                        <tr>
+                            <td>
+                                <%= count%>
                     <center>
-                        <img style="max-height: 200px;border-radius: 50px" src="/Jarvis_Web/images/Avatars/<%= dto.getAvengerId()%>"/>
+                        <img style="max-height: 100px; border-radius: 50px" src="/Jarvis_Web/images/Avatars/<%= dto.getAvengerId()%>"/>
                     </center>  
                     </td>
                     <td><%= dto.getAvengerId()%></td>
@@ -134,22 +140,22 @@
                         </td>
                     </tr>    
                     </tbody>
-                    <%
-                    } else {
-                    %>
-                    <h2 style="text-align: center">
-                        <font color="red" style="font-size: 15px;font-family: monospace">
-                        NO AVENGERS LEFT!
-                        </font>
-                        <form action="MainController" method="POST">
-                            <input type="hidden" name="controller" value="AddAvengerController"/>
-                            <input class="button" type="submit" name="action" value="Add"/>
-                        </form>
-                    </h2>
-                    <%
-                        }
-                    %>
                 </table>
+                <%
+                } else {
+                %>
+                <h2 style="text-align: center">
+                    <font color="red" style="font-size: 15px;font-family: monospace">
+                    NO AVENGERS LEFT!
+                    </font>
+                    <form action="MainController" method="POST">
+                        <input type="hidden" name="controller" value="AddAvengerController"/>
+                        <input class="button" type="submit" name="action" value="Add"/>
+                    </form>
+                </h2>
+                <%
+                    }
+                %>
             </div>
             <div id="footer">
                 <div class="connect">

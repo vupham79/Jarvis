@@ -16,13 +16,15 @@ import javax.servlet.http.HttpServletResponse;
  * @author Vu PH
  */
 public class MainController extends HttpServlet {
-
+    
     private static final String VIEW_ACCOUNT_CONTROLLER = "ViewAccountController";
     private static final String UPDATE_ACCOUNT_CONTROLLER = "UpdateAccountController";
     private static final String VIEW_MISSION_CONTROLLER = "ViewMissionController";
+    private static final String SEARCH_MISSION_CONTROLLER = "SearchMissionController";
     private static final String UPDATE_MISSION_CONTROLLER = "UpdateMissionController";
     private static final String DELETE_MISSION_CONTROLLER = "DeleteMissionController";
     private static final String ADD_MISSION_CONTROLLER = "AddMissionController";
+    private static final String SEARCH_AVENGER_CONTROLLER = "SearchAvengerController";
     private static final String VIEW_AVENGER_CONTROLLER = "ViewAvengerController";
     private static final String UPDATE_AVENGER_CONTROLLER = "UpdateAvengerController";
     private static final String DELETE_AVENGER_CONTROLLER = "DeleteAvengerController";
@@ -32,10 +34,12 @@ public class MainController extends HttpServlet {
     private static final String ADD_MISSION_WEAPON_CONTROLLER = "AddMissionWeaponController";
     private static final String DELETE_MISSION_WEAPON_CONTROLLER = "DeleteMissionWeaponController";
     private static final String VIEW_WEAPON_CONTROLLER = "ViewWeaponController";
+    private static final String SEARCH_WEAPON_CONTROLLER = "SearchWeaponController";
     private static final String UPDATE_WEAPON_CONTROLLER = "UpdateWeaponController";
     private static final String ADD_WEAPON_CONTROLLER = "AddWeaponController";
     private static final String DELETE_WEAPON_CONTROLLER = "DeleteWeaponController";
     private static final String VIEW_MARK_CONTROLLER = "ViewMarkController";
+    private static final String SEARCH_MARK_CONTROLLER = "SearchMarkController";
     private static final String UPDATE_MARK_CONTROLLER = "UpdateMarkController";
     private static final String ADD_MARK_CONTROLLER = "AddMarkController";
     private static final String DELETE_MARK_CONTROLLER = "DeleteMarkController";
@@ -67,6 +71,8 @@ public class MainController extends HttpServlet {
                 url = UPDATE_ACCOUNT_CONTROLLER;
             } else if (controller.equals("ViewMissionController")) {
                 url = VIEW_MISSION_CONTROLLER;
+            } else if (controller.equals("SearchMissionController")) {
+                url = SEARCH_MISSION_CONTROLLER;
             } else if (controller.equals("AddMissionController")) {
                 url = ADD_MISSION_CONTROLLER;
             } else if (controller.equals("DeleteMissionController")) {
@@ -75,6 +81,8 @@ public class MainController extends HttpServlet {
                 url = UPDATE_MISSION_CONTROLLER;
             } else if (controller.equals("ViewAvengerController")) {
                 url = VIEW_AVENGER_CONTROLLER;
+            } else if (controller.equals("SearchAvengerController")) {
+                url = SEARCH_AVENGER_CONTROLLER;
             } else if (controller.equals("AddAvengerController")) {
                 url = ADD_AVENGER_CONTROLLER;
             } else if (controller.equals("DeleteAvengerController")) {
@@ -83,6 +91,8 @@ public class MainController extends HttpServlet {
                 url = UPDATE_AVENGER_CONTROLLER;
             } else if (controller.equals("ViewMarkController")) {
                 url = VIEW_MARK_CONTROLLER;
+            } else if (controller.equals("SearchMarkController")) {
+                url = SEARCH_MARK_CONTROLLER;
             } else if (controller.equals("DeleteMarkController")) {
                 url = DELETE_MARK_CONTROLLER;
             } else if (controller.equals("UpdateMarkController")) {
@@ -91,6 +101,8 @@ public class MainController extends HttpServlet {
                 url = ADD_MARK_CONTROLLER;
             } else if (controller.equals("ViewWeaponController")) {
                 url = VIEW_WEAPON_CONTROLLER;
+            } else if (controller.equals("SearchWeaponController")) {
+                url = SEARCH_WEAPON_CONTROLLER;
             } else if (controller.equals("AddWeaponController")) {
                 url = ADD_WEAPON_CONTROLLER;
             } else if (controller.equals("UpdateWeaponController")) {

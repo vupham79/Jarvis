@@ -56,20 +56,24 @@ public class LoginController extends HttpServlet {
             if (valid) {
                 if (!role.equals("failed")) {
                     HttpSession session = request.getSession();
-                    if (role.equals("admin")) {
-                        url = ADMIN;
-                        session.setAttribute("USERNAME", username);
-                        session.setAttribute("ROLE", "admin");
-                    } else if (role.equals("ironman")) {
-                        url = IRONMAN;
-                        session.setAttribute("USERNAME", username);
-                        session.setAttribute("ROLE", "ironman");
-                    } else if (role.equals("user")) {
-                        url = USER;
-                        session.setAttribute("USERNAME", username);
-                        session.setAttribute("ROLE", "user");
+                    if (session.getAttribute("ROLE") != null) {
+                        
                     } else {
-                        request.setAttribute("ERROR", "Username or Password not right");
+                        if (role.equals("admin")) {
+                            url = ADMIN;
+                            session.setAttribute("USERNAME", username);
+                            session.setAttribute("ROLE", "admin");
+                        } else if (role.equals("ironman")) {
+                            url = IRONMAN;
+                            session.setAttribute("USERNAME", username);
+                            session.setAttribute("ROLE", "ironman");
+                        } else if (role.equals("user")) {
+                            url = USER;
+                            session.setAttribute("USERNAME", username);
+                            session.setAttribute("ROLE", "user");
+                        } else {
+                            request.setAttribute("ERROR", "Username or Password not right");
+                        }
                     }
                 } else {
                     request.setAttribute("ERROR", "Username or Password not right");

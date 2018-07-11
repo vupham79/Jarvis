@@ -39,6 +39,26 @@ public class WeaponDAO implements Serializable {
         return result;
     }
 
+    public List<WeaponDTO> findByLikeId(String search) throws ClassNotFoundException, SQLException {
+        List<WeaponDTO> result;
+        String sql = "SELECT WeaponId, Name, AvengerId "
+                + "FROM Weapon "
+                + "WHERE WeaponId LIKE ?";
+        try (Connection conn = MyConnection.getConnection();
+                PreparedStatement preStm = conn.prepareStatement(sql)) {
+            preStm.setString(1, "%"+search+"%");
+            ResultSet rs = preStm.executeQuery();
+            result = new ArrayList<>();
+            while (rs.next()) {
+                String weaponId = rs.getString("WeaponId");
+                String name = rs.getString("Name");
+                String avengerId = rs.getString("AvengerId");
+                result.add(new WeaponDTO(weaponId, name, avengerId));
+            }
+        }
+        return result;
+    }
+
     public List<WeaponDTO> getWeaponsOfOne(String avengerId) throws ClassNotFoundException, SQLException {
         List<WeaponDTO> result;
         String sql = "SELECT WeaponId, Name "

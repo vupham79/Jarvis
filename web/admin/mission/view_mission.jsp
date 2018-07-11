@@ -49,6 +49,15 @@
                     ${requestScope.ERROR}
                     </font>
                 </h2>
+                <form action="MainController" style="margin: 0 0 0 60%;max-width: 300px;">
+                    <input type="text" name="search" placeholder="Search by ID..."/>
+                    <input type="submit" value="Search"/>
+                    <input type="hidden" name="controller" value="SearchMissionController"/>
+                </form>
+                <%
+                    List<MissionDTO> list = (List<MissionDTO>) request.getAttribute("MISSIONS");
+                    if (list.size() > 0) {
+                %>
                 <table border="1">
                     <thead>
                         <tr>
@@ -59,10 +68,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <%
-                        List<MissionDTO> list = (List<MissionDTO>) request.getAttribute("MISSIONS");
-                        if (list.size() > 0) {
-                    %>
                     <tbody>
                         <%
                             int count = 0;
@@ -70,59 +75,64 @@
                                 count++;
                         %>
                         <tr>
-                            <td><%= count%></td>
                             <td>
-                                <c:url var="viewDetailLink" value="ViewMissionDetailController">
-                                    <c:param name="missionId" value="<%= dto.getMissionId()%>"/>
-                                    <c:param name="date" value="<%= dto.getMissionDate().toString()%>"/>
-                                </c:url>
-                                <a href="${viewDetailLink}"><%= dto.getMissionId()%></a>
-                            </td>
-                            <td><%= dto.getMissionDate()%></td>
-                            <td>
-                                <%
-                                    String status = dto.getMissionStatus();
-                                    if (status.equals("Done")) {
-                                %>
-                                <font color="green">
-                                <%= status%>
-                                </font>
-                                <%
-                                } else {
-                                %>
-                                <font color="red">
-                                <%= status%>
-                                </font>
-                                <%
-                                    }
-                                %>
-                            </td>
-                            <td>
-                                <form action="/Jarvis_Web/admin/MainController" method="POST">
-                                    <input type="hidden" name="controller" value="UpdateMissionController"/>
-                                    <input type="submit" name="action" value="Edit"/>
-                                    <input type="hidden" name="txtId" value="<%= dto.getMissionId()%>"/>
-                                    <input type="hidden" name="txtDate" value="<%= dto.getMissionDate()%>"/>
-                                    <input type="hidden" name="txtStatus" value="<%= dto.getMissionStatus()%>"/>
-                                </form>
-                                <form action="/Jarvis_Web/admin/MainController" method="POST">
-                                    <input type="hidden" name="controller" value="DeleteMissionController"/>
-                                    <input type="submit" name="action" value="Delete"/>
-                                    <input type="hidden" name="txtId" value="<%= dto.getMissionId()%>"/>
-                                </form>
-                            </td>
-                        </tr>
+                                <%= count%>
+                    <center>
+                        <img style="max-height: 100px; border-radius: 50px" src="/Jarvis_Web/images/Missions/<%= dto.getMissionId()%>"/>
+                    </center>
+                    </td>
+                    <td>
+                        <c:url var="viewDetailLink" value="ViewMissionDetailController">
+                            <c:param name="missionId" value="<%= dto.getMissionId()%>"/>
+                            <c:param name="date" value="<%= dto.getMissionDate().toString()%>"/>
+                        </c:url>
+                        <a href="${viewDetailLink}"><%= dto.getMissionId()%></a>
+                    </td>
+                    <td><%= dto.getMissionDate()%></td>
+                    <td>
+                        <%
+                            String status = dto.getMissionStatus();
+                            if (status.equals("Done")) {
+                        %>
+                        <font color="green">
+                        <%= status%>
+                        </font>
+                        <%
+                        } else {
+                        %>
+                        <font color="red">
+                        <%= status%>
+                        </font>
                         <%
                             }
                         %>
-                        <tr>
-                            <td colspan="5">
-                                <form action="/Jarvis_Web/admin/MainController" method="POST">
-                                    <input type="hidden" name="controller" value="AddMissionController"/>
-                                    <input type="submit" class="button" name="action" value="Add"/>
-                                </form>
-                            </td>
-                        </tr>
+                    </td>
+                    <td>
+                        <form action="/Jarvis_Web/admin/MainController" method="POST">
+                            <input type="hidden" name="controller" value="UpdateMissionController"/>
+                            <input type="submit" name="action" value="Edit"/>
+                            <input type="hidden" name="txtId" value="<%= dto.getMissionId()%>"/>
+                            <input type="hidden" name="txtDate" value="<%= dto.getMissionDate()%>"/>
+                            <input type="hidden" name="txtStatus" value="<%= dto.getMissionStatus()%>"/>
+                        </form>
+                        <form action="/Jarvis_Web/admin/MainController" method="POST">
+                            <input type="hidden" name="controller" value="DeleteMissionController"/>
+                            <input type="submit" name="action" value="Delete"/>
+                            <input type="hidden" name="txtId" value="<%= dto.getMissionId()%>"/>
+                        </form>
+                    </td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                    <tr>
+                        <td colspan="5">
+                            <form action="/Jarvis_Web/admin/MainController" method="POST">
+                                <input type="hidden" name="controller" value="AddMissionController"/>
+                                <input type="submit" class="button" name="action" value="Add"/>
+                            </form>
+                        </td>
+                    </tr>
                     </tbody>
                     <%
                     } else {

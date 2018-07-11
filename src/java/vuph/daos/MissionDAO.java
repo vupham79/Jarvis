@@ -40,6 +40,26 @@ public class MissionDAO implements Serializable {
         }
         return result;
     }
+    
+    public List<MissionDTO> findByLikeId(String search) throws ClassNotFoundException, SQLException {
+        List<MissionDTO> result = null;
+        String sql = "SELECT MissionId, Date, MissionStatus "
+                + "FROM Mission "
+                + "WHERE MissionId LIKE ?";
+        try (Connection conn = MyConnection.getConnection();
+                PreparedStatement preStm = conn.prepareStatement(sql)) {
+            preStm.setString(1, "%" + search + "%");
+            ResultSet rs = preStm.executeQuery();
+            result = new ArrayList<>();
+            while (rs.next()) {
+                String id = rs.getString("MissionId");
+                Date date = rs.getDate("Date");
+                String status = rs.getString("MissionStatus");
+                result.add(new MissionDTO(id, status, date));
+            }
+        }
+        return result;
+    }
 
     public boolean updateMission(MissionDTO dto) throws ClassNotFoundException, SQLException {
         boolean result;
@@ -57,14 +77,20 @@ public class MissionDAO implements Serializable {
 
     public boolean removeMission(String missionId) throws ClassNotFoundException, SQLException {
         boolean result;
-        String sql = "DELETE FROM MissionDetail "
-                + "WHERE MissionDetail.MissionId = ? "
+        String sql = "DELETE FROM WeaponDetail "
+                + "WHERE WeaponDetail.MissionId = ? \n"
+                + "DELETE FROM MissionDetail "
+                + "WHERE MissionDetail.MissionId = ? \n"
+                + "DELETE FROM MarkDetail "
+                + "WHERE MarkDetail.MissionId = ? \n"
                 + "DELETE Mission "
-                + "WHERE MissionId=?";
+                + "WHERE MissionId = ?";
         try (Connection conn = MyConnection.getConnection();
                 PreparedStatement preStm = conn.prepareStatement(sql)) {
             preStm.setString(1, missionId);
             preStm.setString(2, missionId);
+            preStm.setString(3, missionId);
+            preStm.setString(4, missionId);
             result = preStm.executeUpdate() > 0;
         }
         return result;

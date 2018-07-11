@@ -28,6 +28,7 @@ public class MainController extends HttpServlet {
     private static final String ADD_MISSION_WEAPON_CONTROLLER = "AddMissionWeaponController";
     private static final String DELETE_MISSION_WEAPON_CONTROLLER = "DeleteMissionWeaponController";
     private static final String VIEW_MARK_CONTROLLER = "ViewMarkController";
+    private static final String SEARCH_MARK_CONTROLLER = "SearchMarkController";
     private static final String UPDATE_MARK_CONTROLLER = "UpdateMarkController";
     private static final String ADD_MARK_CONTROLLER = "AddMarkController";
     private static final String DELETE_MARK_CONTROLLER = "DeleteMarkController";
@@ -63,6 +64,8 @@ public class MainController extends HttpServlet {
                 url = UPDATE_MISSION_CONTROLLER;
             } else if (controller.equals("ViewMarkController")) {
                 url = VIEW_MARK_CONTROLLER;
+            } else if (controller.equals("SearchMarkController")) {
+                url = SEARCH_MARK_CONTROLLER;
             } else if (controller.equals("DeleteMarkController")) {
                 url = DELETE_MARK_CONTROLLER;
             } else if (controller.equals("UpdateMarkController")) {

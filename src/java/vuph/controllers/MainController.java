@@ -6,11 +6,11 @@
 package vuph.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -36,13 +36,22 @@ public class MainController extends HttpServlet {
         String url = ERROR;
         try {
             String action = request.getParameter("action");
-            switch(action) {
-                case "Login": 
-                    url = LOGIN;
-                    break;
-                default:
-                    request.setAttribute("ERROR", "Action not supported yet");
-                    url = ERROR;
+            if (action == null) {
+                HttpSession session = request.getSession();
+                if (session.getAttribute("ROLE") != null) {
+                    url = session.getAttribute("ROLE") + "/index.jsp";
+                } else {
+                    url = "login.jsp";
+                }
+            } else {
+                switch (action) {
+                    case "Login":
+                        url = LOGIN;
+                        break;
+                    default:
+                        request.setAttribute("ERROR", "Action not supported yet");
+                        url = ERROR;
+                }
             }
         } catch (Exception e) {
             log("ERROR at MainController: " + e.getMessage());

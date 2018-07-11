@@ -1,19 +1,7 @@
-/*table {
-    background-color: #000000;
-    width: 500px;
-    margin: 20px auto auto auto;
-    max-width: 940px;
-    min-height: 60px;
-    padding: 20px;
-    color: white;
-    border: bisque;
-    table-layout: fixed;
+font {
+    font-weight: bolder;
 }
 
-table td {
-    width: 100px;
-}
-*/
 .home h2 {
     color: white;
     font-family: fantasy;
@@ -30,25 +18,24 @@ table, td, th {
 }
 
 table {
+    background: url(/Jarvis_Web/images/bg-transparent1.png) repeat;
     margin: 20px auto auto auto;
     max-width: 940px;
     min-width: 900px;
     min-height: 60px;
-    background-color: #FFFFFF;
     border-collapse: collapse;
 }
 
 th, td {
     width: 100px;
     padding: 15px;
+    color: #FFFFFF;
 }
 
-.button {
-    /*    width: 500px;
-        margin: 0 510px;
-        padding: 20px;*/
+td {
+    max-height: 100px;
 }
-/* Website template by freewebsitetemplates.com */
+
 body {
     margin: 0;
     padding: 0;
@@ -56,14 +43,16 @@ body {
     width: auto;
     font-size: 16px;
 }
+
 body #page {
-    background: url("../images/bg.jpg") no-repeat scroll center top #000000;
-    background-size: cover;
+    background: url("/Jarvis_Web/images/bg.jpg") repeat scroll center top #000000;
+    background-size: contain;
+    height: auto;
     margin: 0;
+    min-height: 800px;
     overflow: hidden;
     padding: 0;
-    width: auto;
-    z-index: 3;
+    width: 100%;
 }
 a {
     text-decoration: none;
@@ -75,15 +64,21 @@ a:active {
 img {
     border: none;
 }
+
+.login {
+    background-image: url(/Jarvis_Web/images/bg-transparent1.png);
+    background-repeat: repeat;
+    width: 500px;
+}
 /*-------------------------------------------FONTS---------------------------------------------*/
 @font-face {
     font-family: 'audiowide-regular-webfont';
-    src: url('../fonts/audiowide-regular-webfont.eot');
-    src: url('../fonts/audiowide-regular-webfont.woff') format('woff'), url('../fonts/audiowide-regular-webfont.ttf') format('truetype'), url('../fonts/audiowide-regular-webfont.svg') format('svg');
+    src: url('/Jarvis_Web/fonts/audiowide-regular-webfont.eot');
+    src: url('/Jarvis_Web/fonts/audiowide-regular-webfont.woff') format('woff'), url('/Jarvis_Web/fonts/audiowide-regular-webfont.ttf') format('truetype'), url('../fonts/audiowide-regular-webfont.svg') format('svg');
 }
 /*----------------------------------------header-styles---------------------------------------*/
 #header {
-    background: url(../images/bg-transparent1.png) repeat;
+    background: url(/Jarvis_Web/images/bg-transparent1.png) repeat;
     margin: 0;
     min-height: 60px;
     padding: 0;
@@ -93,7 +88,7 @@ img {
     margin: 0 auto;
     max-width: 940px;
     min-height: 60px;
-    padding: 0 10px;
+    padding: 0 10px;    
 }
 #header div a.logo {
     display: block;
@@ -201,9 +196,9 @@ img {
 #body {
     background: url(../images/avengers.jpg) center top;
     background-size: cover;
-    height: 100%;
+    height: auto;
     margin: 0;
-    min-height: 808px;
+    min-height: 800px;
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -561,11 +556,11 @@ img {
     font-size: 36px;
     font-weight: normal;
     line-height: 36px;
-    margin: 0 auto 87px;
+    margin: 0 auto 60px;
     padding: 0;
     text-align: center;
     text-transform: uppercase;
-    width: 940px;
+    width: auto;
 }
 #body.about .header div h2 {
     color: #FFFFFF;
@@ -1317,7 +1312,7 @@ img {
 }
 /*----------------------------------------footer-styles---------------------------------------*/
 #footer {
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
     width: auto;
 }

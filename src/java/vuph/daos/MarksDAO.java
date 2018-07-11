@@ -33,7 +33,26 @@ public class MarksDAO implements Serializable {
         }
         return result;
     }
-
+    
+    public List<MarksDTO> findByLikeId(String search) throws ClassNotFoundException, SQLException {
+        List<MarksDTO> result;
+        String sql = "SELECT MarkId, MarkStatus "
+                + "FROM Marks "
+                + "WHERE MarkId LIKE ?";
+        try (Connection conn = MyConnection.getConnection();
+                PreparedStatement preStm = conn.prepareStatement(sql)) {
+            preStm.setString(1, "%"+search+"%");
+            ResultSet rs = preStm.executeQuery();
+            result = new ArrayList<>();
+            while (rs.next()) {
+                String id = rs.getString("MarkId");
+                String status = rs.getString("MarkStatus");
+                result.add(new MarksDTO(id, status));
+            }
+        }
+        return result;
+    }
+    
     public List<MarksDTO> getAllMarks() throws ClassNotFoundException, SQLException {
         List<MarksDTO> result;
         String sql = "SELECT MarkId, MarkStatus "

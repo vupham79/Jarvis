@@ -264,6 +264,38 @@
         <servlet-name>IronmanUpdateMarkAvatarController</servlet-name>
         <servlet-class>vuph.ironman.controllers.UpdateMarkAvatarController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminSearchAvengerController</servlet-name>
+        <servlet-class>vuph.admin.controllers.SearchAvengerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminSearchMissionController</servlet-name>
+        <servlet-class>vuph.admin.controllers.SearchMissionController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminSearchMarkController</servlet-name>
+        <servlet-class>vuph.admin.controllers.SearchMarkController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IronmanSearchMarkController</servlet-name>
+        <servlet-class>vuph.ironman.controllers.SearchMarkController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IronmanSearchMissionController</servlet-name>
+        <servlet-class>vuph.ironman.controllers.SearchMissionController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserSearchMissionController</servlet-name>
+        <servlet-class>vuph.user.controllers.SearchMissionController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminSearchWeaponController</servlet-name>
+        <servlet-class>vuph.admin.controllers.SearchWeaponController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserSearchWeaponController</servlet-name>
+        <servlet-class>vuph.user.controllers.SearchWeaponController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ViewAccountController</servlet-name>
         <url-pattern>/admin/ViewAccountController</url-pattern>
@@ -520,12 +552,44 @@
         <servlet-name>IronmanUpdateMarkAvatarController</servlet-name>
         <url-pattern>/ironman/UpdateMarkAvatarController</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminSearchAvengerController</servlet-name>
+        <url-pattern>/admin/SearchAvengerController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminSearchMissionController</servlet-name>
+        <url-pattern>/admin/SearchMissionController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminSearchMarkController</servlet-name>
+        <url-pattern>/admin/SearchMarkController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IronmanSearchMarkController</servlet-name>
+        <url-pattern>/ironman/SearchMarkController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IronmanSearchMissionController</servlet-name>
+        <url-pattern>/ironman/SearchMissionController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserSearchMissionController</servlet-name>
+        <url-pattern>/user/SearchMissionController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminSearchWeaponController</servlet-name>
+        <url-pattern>/admin/SearchWeaponController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserSearchWeaponController</servlet-name>
+        <url-pattern>/user/SearchWeaponController</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>MainController</welcome-file>
     </welcome-file-list>
 </web-app>
