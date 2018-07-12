@@ -49,7 +49,7 @@ public class AddMissionController extends HttpServlet {
             }
         } catch (Exception e) {
             log("ERROR at AddMissionController: " + e.getMessage());
-            request.setAttribute("ERROR", "MISSION EXISTED!");
+            request.setAttribute("ERROR", "ADD MISSION FAILED!");
             url = ADD;
         } finally {
             request.getRequestDispatcher(url).forward(request, response);

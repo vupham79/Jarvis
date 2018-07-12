@@ -2,14 +2,23 @@ font {
     font-weight: bolder;
 }
 
+table a {
+    color: white;
+    text-decoration: underline !important;
+}
+
 .home h2 {
     color: white;
-    font-family: fantasy;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 2px
 }
 
 table input {
     width: 100%;
+    font-family: 'Roboto', sans-serif;
+    min-height: 40px;
+    border-radius: 30px;
+    text-align: center;
 }
 
 table, td, th {    
@@ -30,6 +39,12 @@ th, td {
     width: 100px;
     padding: 15px;
     color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+table input:hover { 
+    background-color: #f9f3cf;
+    transition: 1s;
 }
 
 td {
@@ -54,6 +69,11 @@ body #page {
     padding: 0;
     width: 100%;
 }
+
+body #login {
+    
+}
+
 a {
     text-decoration: none;
     outline: none;
@@ -71,11 +91,6 @@ img {
     width: 500px;
 }
 /*-------------------------------------------FONTS---------------------------------------------*/
-@font-face {
-    font-family: 'audiowide-regular-webfont';
-    src: url('/Jarvis_Web/fonts/audiowide-regular-webfont.eot');
-    src: url('/Jarvis_Web/fonts/audiowide-regular-webfont.woff') format('woff'), url('/Jarvis_Web/fonts/audiowide-regular-webfont.ttf') format('truetype'), url('../fonts/audiowide-regular-webfont.svg') format('svg');
-}
 /*----------------------------------------header-styles---------------------------------------*/
 #header {
     background: url(/Jarvis_Web/images/bg-transparent1.png) repeat;
@@ -1312,7 +1327,7 @@ img {
 }
 /*----------------------------------------footer-styles---------------------------------------*/
 #footer {
-    margin: 20px 0 0 0;
+    margin: 0;
     padding: 0;
     width: auto;
 }

@@ -16,7 +16,7 @@
         <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
     </head>
     <body>        
-        <div id="page">
+        <div id="login">
             <div id="body">
                 <div class="header">
                     <div class="contact">

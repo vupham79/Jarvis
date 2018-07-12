@@ -13,6 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JARVIS</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
         <link rel="stylesheet" href="/Jarvis_Web/css/style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="/Jarvis_Web/css/mobile.css">
         <script src="/Jarvis_Web/js/mobile.js" type="text/javascript"></script>
@@ -89,25 +90,25 @@
                             String status = dto.getStatus();
                             if (status.equals("Excellent")) {
                         %>
-                        <font color="green">
+                        <font color="#fff656">
                         <%= status%>
                         </font>
                         <%
                         } else if (status.equals("Good")) {
                         %>
-                        <font color="green">
+                        <font color="#60ff83">
                         <%= status%>
                         </font>
                         <%
                         } else if (status.equals("Weak")) {
                         %>
-                        <font color="red">
+                        <font color="#ff3acd">
                         <%= status%>
                         </font>
                         <%
                         } else if (status.equals("Injured")) {
                         %>
-                        <font color="red">
+                        <font color="#f95a20">
                         <%= status%>
                         </font>
                         <%

@@ -101,7 +101,14 @@ public class LoginFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
+        
         String servletPath = req.getServletPath();
+        log("servlet: " + servletPath);
+        if (servletPath.equals("/login.jsp")) {
+            if (req.getSession().getAttribute("ROLE") != null) {
+                res.sendRedirect("MainController");
+            }
+        }
         if (servletPath.indexOf("/", 1) > 0) {
             String src = servletPath.substring(1, servletPath.indexOf("/", 1));
             switch (src) {

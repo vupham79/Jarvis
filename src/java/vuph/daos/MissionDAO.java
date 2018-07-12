@@ -40,7 +40,7 @@ public class MissionDAO implements Serializable {
         }
         return result;
     }
-    
+
     public List<MissionDTO> findByLikeId(String search) throws ClassNotFoundException, SQLException {
         List<MissionDTO> result = null;
         String sql = "SELECT MissionId, Date, MissionStatus "
@@ -149,12 +149,24 @@ public class MissionDAO implements Serializable {
 
     public boolean removeMissionDetail(String missionId, String avengerId) throws ClassNotFoundException, SQLException {
         boolean result;
-        String sql = "DELETE MissionDetail "
+        String sql = "DELETE FROM WeaponDetail "
+                + "WHERE WeaponDetail.WeaponId IN "
+                + "( " 
+                + "	SELECT WeaponDetail.WeaponId FROM WeaponDetail "
+                + "	INNER JOIN Weapon ON WeaponDetail.WeaponId = Weapon.WeaponId "
+                + "	WHERE Weapon.AvengerId = ?"
+                + ") "
+                + "DELETE MarkDetail "
+                + "WHERE MissionId=? AND AvengerId=? "
+                + "DELETE MissionDetail "
                 + "WHERE MissionId=? AND AvengerId=?";
         try (Connection conn = MyConnection.getConnection();
                 PreparedStatement preStm = conn.prepareStatement(sql)) {
-            preStm.setString(1, missionId);
-            preStm.setString(2, avengerId);
+            preStm.setString(1, avengerId);
+            preStm.setString(2, missionId);
+            preStm.setString(3, avengerId);
+            preStm.setString(4, missionId);
+            preStm.setString(5, avengerId);
             result = preStm.executeUpdate() > 0;
         }
         return result;
